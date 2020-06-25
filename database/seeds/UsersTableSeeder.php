@@ -20,25 +20,29 @@ class UsersTableSeeder extends Seeder
                     'name' => 'Admin',
                     'email' => 'pqnhat89@gmail.com',
                     'password' => bcrypt('123'),
-                    'role' => 2
+                    'role' => 2,
+                    'quan_huyen' => 1,
                 ],
                 [
                     'name' => 'Thành Phố',
                     'email' => 'tp@gmail.com',
                     'password' => bcrypt('123'),
-                    'role' => 2
+                    'role' => 2,
+                    'quan_huyen' => 2,
                 ],
                 [
                     'name' => 'Quận Huyện',
                     'email' => 'qh@gmail.com',
                     'password' => bcrypt('123'),
-                    'role' => 1
+                    'role' => 1,
+                    'quan_huyen' => 3,
                 ],
                 [
                     'name' => 'Người mới',
                     'email' => 'nm@gmail.com',
                     'password' => bcrypt('123'),
-                    'role' => 0
+                    'role' => 0,
+                    'quan_huyen' => 4
                 ]
             ]
         );

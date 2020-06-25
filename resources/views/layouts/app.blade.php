@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -78,8 +79,17 @@
         </nav>
 
         <main class="py-4">
+            <div class="text-center text-danger">
+                @foreach ($errors->all() as $message)
+                    {!! $message !!}
+                @endforeach
+            </div>
             @yield('content')
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>

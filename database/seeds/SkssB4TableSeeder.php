@@ -18,10 +18,9 @@ class SkssB4TableSeeder extends Seeder
             [
                 [
                     'nam' => 2020,
-                    'thang' => '3-thang',
-                    'quan-huyen' => 1,
+                    'loai' => '3-thang',
+                    'quan_huyen' => 1,
                     'ten' => 'Báo cáo sức khỏe sinh sản - 3 tháng',
-                    'email' => 'pqnhat89@gmail.com',
                     'one' => 1,
                     'onedotone' => 11,
                     'two' => 2,
@@ -42,7 +41,11 @@ class SkssB4TableSeeder extends Seeder
                     'six' => 6,
                     'sixdotone' => 61,
                     'sixdottwo' => 62,
-                    'seven' => 7
+                    'seven' => 7,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                    'created_by' => 'pqnhat89@gmail.com',
+                    'updated_by' => 'pqnhat89@gmail.com'
                 ]
             ]
         );
