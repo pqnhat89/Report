@@ -1,3 +1,7 @@
 table th {
     white-space: nowrap;
 }
+
+.navbar-nav .nav-item {
+    padding: 0 10px;
+}

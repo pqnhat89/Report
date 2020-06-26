@@ -23,6 +23,6 @@ class BaoCaoController extends Controller
      */
     public function index($thang)
     {
-        return view('bao-cao.bao-cao');
+        return view('index');
     }
 }

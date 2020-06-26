@@ -34,7 +34,7 @@ class SkssController extends Controller
             'b8',
             'CTK'
         ];
-        return view('bao-cao.skss.skss', ['skss' => $skss]);
+        return view('skss.index', ['skss' => $skss]);
     }
 
     public function b4()
@@ -47,7 +47,7 @@ class SkssController extends Controller
             ->orderBy('id', 'desc')
             ->get();
 
-        return view('bao-cao.skss.b4.b4', ['b4' => $b4]);
+        return view('skss.b4.index', ['b4' => $b4]);
     }
 
     public function b4Tao()
@@ -56,7 +56,7 @@ class SkssController extends Controller
 
         $fields = SkssB4::toArray();
 
-        return view('bao-cao.skss.b4.b4Xem', [
+        return view('skss.b4.showB4', [
             'quanHuyen' => $quanHuyen,
             'fields' => $fields,
             'b4' => null,
@@ -79,7 +79,7 @@ class SkssController extends Controller
         }
         $b4 = DB::table('skss_b4')->where($conditions)->first();
 
-        return view('bao-cao.skss.b4.b4Xem', [
+        return view('skss.b4.showB4', [
             'quanHuyen' => $quanHuyen,
             'fields' => $fields,
             'b4' => $b4,
@@ -107,7 +107,7 @@ class SkssController extends Controller
             return redirect()->back()->withErrors('Người dùng không có quyền');
         }
 
-        return view('bao-cao.skss.b4.b4Xem', [
+        return view('skss.b4.showB4', [
             'quanHuyen' => $quanHuyen,
             'fields' => $fields,
             'b4' => $b4,

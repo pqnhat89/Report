@@ -28,13 +28,13 @@ class AdminSkssController extends Controller
     {
         $skss = [
             'b4',
-            'b5',
-            'b6',
-            'b7.1',
-            'b8',
-            'CTK'
+            // 'b5',
+            // 'b6',
+            // 'b7.1',
+            // 'b8',
+            // 'CTK'
         ];
-        return view('bao-cao.skss.skss', ['skss' => $skss]);
+        return view('skss.index', ['skss' => $skss]);
     }
 
     public function b4()
@@ -44,7 +44,7 @@ class AdminSkssController extends Controller
             ->groupBy('nam', 'loai')
             ->orderBy('nam', 'desc')
             ->get();
-        return view('bao-cao.skss.admin.admin_b4', [
+        return view('admin.skss.b4.index', [
             'b4' => $b4,
             'type' => 'tong-hop'
         ]);
@@ -84,7 +84,7 @@ class AdminSkssController extends Controller
             ])
             ->groupBy('nam', 'loai')
             ->first();
-        return view('bao-cao.skss.b4.b4Xem', [
+        return view('skss.b4.showB4', [
             'b4' => $b4,
             'type' => 'tong-hop'
         ]);

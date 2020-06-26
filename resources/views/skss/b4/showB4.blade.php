@@ -81,7 +81,7 @@
             @case('sua')
                 <div class="row">
                     <div class="col-sm">
-                        <a class="btn btn-info" href="/bao-cao/skss/b4">Thoát</a>
+                        <a class="btn btn-info" href="/skss/b4">Thoát</a>
                     </div>
                     <div class="col-sm text-right">
                         <button type="reset" class="btn btn-danger">Nhập lại</button>
@@ -92,10 +92,10 @@
             @case('xem')
                 <div class="row">
                     <div class="col-sm">
-                        <a class="btn btn-info" href="/bao-cao/skss/b4">Thoát</a>
+                        <a class="btn btn-info" href="/skss/b4">Thoát</a>
                     </div>
                     <div class="col-sm text-right">
-                        <a class="btn btn-primary" href="/bao-cao/skss/b4/{{ $b4->id }}/sua">Sửa</a>
+                        <a class="btn btn-primary" href="/skss/b4/{{ $b4->id }}/sua">Sửa</a>
                     </div>
                 </div>
                 @break
