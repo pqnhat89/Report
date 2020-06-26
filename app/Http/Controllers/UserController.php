@@ -23,7 +23,7 @@ class UserController extends Controller
             )
             ->orderBy('users.id', 'desc')
             ->get();
-        return view('user.index', ['users' => $users]);
+        return view('admin.user.index', ['users' => $users]);
     }
 
     public function change(Request $request, $email)
@@ -50,7 +50,7 @@ class UserController extends Controller
         $user = DB::table('users')
             ->where('email', $email)
             ->first();
-        return view('user.edit', [
+        return view('admin.user.edit', [
             'user' => $user,
             'quanHuyen' => $quanHuyen,
         ]);

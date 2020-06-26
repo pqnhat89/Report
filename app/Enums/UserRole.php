@@ -3,6 +3,7 @@
 namespace App\Enums;
 
 use MyCLabs\Enum\Enum;
+use Illuminate\Support\Facades\Auth;
 
 class UserRole extends Enum
 {
@@ -19,5 +20,20 @@ class UserRole extends Enum
     public static function getTitle($key)
     {
         return self::$title[$key] ?? null;
+    }
+
+    public static function isAdmin()
+    {
+        return Auth::user()->role == self::Admin;
+    }
+
+    public static function isNormalUser()
+    {
+        return Auth::user()->role == self::NormalUser;
+    }
+
+    public static function isNewUser()
+    {
+        return Auth::user()->role == self::NewUser;
     }
 }

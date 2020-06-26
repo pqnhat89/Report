@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\Skss\SkssB4;
+use App\Enums\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,11 +29,11 @@ class SkssController extends Controller
     {
         $skss = [
             'b4',
-            'b5',
-            'b6',
-            'b7.1',
-            'b8',
-            'CTK'
+            // 'b5',
+            // 'b6',
+            // 'b7.1',
+            // 'b8',
+            // 'CTK'
         ];
         return view('skss.index', ['skss' => $skss]);
     }
@@ -50,7 +51,7 @@ class SkssController extends Controller
         return view('skss.b4.index', ['b4' => $b4]);
     }
 
-    public function b4Tao()
+    public function createB4()
     {
         $quanHuyen = DB::table('quan_huyen')->get();
 
@@ -64,7 +65,7 @@ class SkssController extends Controller
         ]);
     }
 
-    public function b4Xem($id)
+    public function showB4($id)
     {
         $quanHuyen = DB::table('quan_huyen')->get();
 
@@ -87,7 +88,7 @@ class SkssController extends Controller
         ]);
     }
 
-    public function b4Sua($id)
+    public function editB4($id)
     {
         $quanHuyen = DB::table('quan_huyen')->get();
 
@@ -115,18 +116,18 @@ class SkssController extends Controller
         ]);
     }
 
-    public function b4Luu(Request $request, $id)
+    public function saveB4(Request $request, $id)
     {
         $inputs = $request->except('_token');
         $inputs['updated_by'] = Auth::user()->email;
         $inputs['updated_at'] = now();
-
         if ($id) {
             // cập nhật
-            DB::table('skss_b4')->where([
-                'id' => $id,
-                'quan_huyen' => Auth::user()->quan_huyen
-            ])->update($inputs);
+            $conditions = ['id' => $id];
+            if (UserRole::isNormalUser()) {
+                $conditions['quan_huyen'] = Auth::user()->quan_huyen;
+            }
+            DB::table('skss_b4')->where($conditions)->update($inputs);
         } else {
             // tạo mới
             $inputs['quan_huyen'] = Auth::user()->quan_huyen;
@@ -135,15 +136,16 @@ class SkssController extends Controller
             $inputs['updated_by'] = Auth::user()->email;
             DB::table('skss_b4')->insert($inputs);
         }
-        return redirect()->route('skss_b4');
+        return redirect()->route('skss.b4.index');
     }
 
-    public function b4Xoa($id)
+    public function deleteB4($id)
     {
-        DB::table('skss_b4')->where([
-            'id' => $id,
-            'quan_huyen' => Auth::user()->quan_huyen
-        ])->delete();
-        return redirect()->route('skss_b4');
+        $conditions = ['id' => $id];
+        if (UserRole::isNormalUser()) {
+            $conditions['quan_huyen'] = Auth::user()->quan_huyen;
+        }
+        DB::table('skss_b4')->where($conditions)->delete();
+        return redirect()->route('skss.b4.index');
     }
 }

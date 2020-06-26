@@ -23,7 +23,7 @@
                 </td>
                 @if (Auth::user()->role == \App\Enums\UserRole::Admin)
                 <td>
-                    <a href="{{ route('skss_'.$type) }}">Chi tiết</a>
+                    <a href="{{ route('skss.'.$type.'.index') }}">Chi tiết</a>
                 </td>
                 @endif
             </tr>

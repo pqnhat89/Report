@@ -45,7 +45,7 @@
                             <select class="form-control" disabled>
                                 <option value="">Vui lòng chọn ...</option>
                                 @foreach ($quanHuyen as $data)
-                                    <option value="{{ $data->id}}" {{ $data->id == Auth::user()->quan_huyen ? 'selected' : null  }}>
+                                    <option value="{{ $data->id}}" {{ $data->id == ($b4->quan_huyen ?? Auth::user()->quan_huyen) ? 'selected' : null  }}>
                                         {{ $data->name }}
                                     </option>
                                 @endforeach

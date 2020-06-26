@@ -35,12 +35,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 });
 
 Route::group(['prefix' => 'skss'], function () {
-    Route::get('/', 'SkssController@index');
-    Route::get('/b4', 'SkssController@b4')->name('skss_b4');
-    Route::get('/b4/0/tao', 'SkssController@b4Tao');
-    Route::get('/b4/{id}', 'SkssController@b4Xem');
-    Route::get('/b4/{id}/sua', 'SkssController@b4Sua');
-    Route::post('/b4/{id}/tao', 'SkssController@b4Luu');
-    Route::post('/b4/{id}/sua', 'SkssController@b4Luu');
-    Route::post('/b4/{id}/xoa', 'SkssController@b4Xoa')->name('skss_b4_xoa');
+    Route::get('/', 'SkssController@index')->name('skss.index');
+    Route::get('/b4', 'SkssController@b4')->name('skss.b4.index');
+    Route::get('/b4/0/create', 'SkssController@createB4')->name('skss.b4.create');
+    Route::post('/b4/0/create', 'SkssController@saveB4');
+    Route::get('/b4/{id}', 'SkssController@showB4')->name('skss.b4.show');
+    Route::get('/b4/{id}/edit', 'SkssController@editB4')->name('skss.b4.edit');
+    Route::post('/b4/{id}/edit', 'SkssController@saveB4');
+    Route::post('/b4/{id}/delete', 'SkssController@deleteB4')->name('skss.b4.delete');
 });

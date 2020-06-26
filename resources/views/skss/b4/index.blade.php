@@ -37,9 +37,9 @@
                         <td nowrap>{{ $data->created_by }}</td>
                         <td nowrap>{{ $data->updated_by }}</td>
                         <td nowrap>
-                            <a class="btn btn-info" href="b4/{{ $data->id }}">Xem</a>
-                            <a class="btn btn-primary" href="b4/{{ $data->id }}/sua">Sửa</a>
-                            <form class="d-inline" method="POST" action="{{ route('skss_b4_xoa', ['id' => $data->id]) }}">
+                            <a class="btn btn-info" href="{{ route('skss.b4.show', ['id' => $data->id]) }}">Xem</a>
+                            <a class="btn btn-primary" href="{{ route('skss.b4.edit', ['id' => $data->id]) }}">Sửa</a>
+                            <form class="d-inline" method="POST" action="{{ route('skss.b4.delete', ['id' => $data->id]) }}">
                                 {{ csrf_field() }}
                                 <button class="btn btn-danger" type="submit">Xóa</button>
                             </form>
