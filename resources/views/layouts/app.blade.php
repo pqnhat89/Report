@@ -80,9 +80,6 @@
         </nav>
 
         <main class="py-4">
-            <div class="container pb-3">
-                <a class="btn btn-primary" href="{{ url()->previous() }}">Back</a>
-            </div>
             <div class="text-center text-danger">
                 @foreach ($errors->all() as $message)
                     {!! $message !!}
