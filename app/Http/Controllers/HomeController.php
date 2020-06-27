@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = [
+            'skss' => 'Sức khỏe sinh sản'
+        ];
+        return view('home', ['data' => $data]);
     }
 }

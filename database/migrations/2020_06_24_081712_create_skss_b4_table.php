@@ -18,7 +18,6 @@ class CreateSkssB4Table extends Migration
             $table->integer('nam');
             $table->string('loai');
             $table->string('quan_huyen');
-            $table->string('ten');
             $table->integer('one')->nullable();
             $table->integer('onedotone')->nullable();
             $table->integer('two')->nullable();

@@ -21,28 +21,35 @@ class UsersTableSeeder extends Seeder
                     'email' => 'pqnhat89@gmail.com',
                     'password' => bcrypt('123'),
                     'role' => 2,
+                    'quan_huyen' => 0,
+                ],
+                [
+                    'name' => 'Đà Nẵng',
+                    'email' => 'danang@gmail.com',
+                    'password' => bcrypt('123'),
+                    'role' => 2,
+                    'quan_huyen' => 0,
+                ],
+                [
+                    'name' => 'Hải Châu',
+                    'email' => 'haichau@gmail.com',
+                    'password' => bcrypt('123'),
+                    'role' => 1,
                     'quan_huyen' => 1,
                 ],
                 [
-                    'name' => 'Thành Phố',
-                    'email' => 'tp@gmail.com',
+                    'name' => 'Cẩm Lệ',
+                    'email' => 'camle@gmail.com',
                     'password' => bcrypt('123'),
-                    'role' => 2,
+                    'role' => 1,
                     'quan_huyen' => 2,
                 ],
                 [
-                    'name' => 'Quận Huyện',
-                    'email' => 'qh@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 1,
-                    'quan_huyen' => 3,
-                ],
-                [
-                    'name' => 'Người mới',
-                    'email' => 'nm@gmail.com',
+                    'name' => 'Thanh Khê',
+                    'email' => 'thanhkhe@gmail.com',
                     'password' => bcrypt('123'),
                     'role' => 0,
-                    'quan_huyen' => 4
+                    'quan_huyen' => 3
                 ]
             ]
         );

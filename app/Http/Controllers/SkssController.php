@@ -2,29 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\Skss\SkssB4;
-use App\Enums\UserRole;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-
 class SkssController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         $skss = [
@@ -36,116 +20,5 @@ class SkssController extends Controller
             // 'CTK'
         ];
         return view('skss.index', ['skss' => $skss]);
-    }
-
-    public function b4()
-    {
-        $conditions = [];
-        if (Auth::user()->role != 2) {
-            $conditions[] = ['quan_huyen', Auth::user()->quan_huyen];
-        }
-        $b4 = DB::table('skss_b4')->where($conditions)
-            ->orderBy('id', 'desc')
-            ->get();
-
-        return view('skss.b4.index', ['b4' => $b4]);
-    }
-
-    public function createB4()
-    {
-        $quanHuyen = DB::table('quan_huyen')->get();
-
-        $fields = SkssB4::toArray();
-
-        return view('skss.b4.showB4', [
-            'quanHuyen' => $quanHuyen,
-            'fields' => $fields,
-            'b4' => null,
-            'type' => 'tao'
-        ]);
-    }
-
-    public function showB4($id)
-    {
-        $quanHuyen = DB::table('quan_huyen')->get();
-
-        $fields = SkssB4::toArray();
-
-        $conditions = [
-            ['id', $id]
-        ];
-
-        if (Auth::user()->role != 2) {
-            $conditions[] = ['quan_huyen', Auth::user()->quan_huyen];
-        }
-        $b4 = DB::table('skss_b4')->where($conditions)->first();
-
-        return view('skss.b4.showB4', [
-            'quanHuyen' => $quanHuyen,
-            'fields' => $fields,
-            'b4' => $b4,
-            'type' => 'xem'
-        ]);
-    }
-
-    public function editB4($id)
-    {
-        $quanHuyen = DB::table('quan_huyen')->get();
-
-        $fields = SkssB4::toArray();
-
-        $conditions = [
-            ['id', $id]
-        ];
-
-        if (Auth::user()->role != 2) {
-            $conditions[] = ['quan_huyen', Auth::user()->quan_huyen];
-        }
-
-        $b4 = DB::table('skss_b4')->where($conditions)->first();
-
-        if (!$b4) {
-            return redirect()->back()->withErrors('Người dùng không có quyền');
-        }
-
-        return view('skss.b4.showB4', [
-            'quanHuyen' => $quanHuyen,
-            'fields' => $fields,
-            'b4' => $b4,
-            'type' => 'sua'
-        ]);
-    }
-
-    public function saveB4(Request $request, $id)
-    {
-        $inputs = $request->except('_token');
-        $inputs['updated_by'] = Auth::user()->email;
-        $inputs['updated_at'] = now();
-        if ($id) {
-            // cập nhật
-            $conditions = ['id' => $id];
-            if (UserRole::isNormalUser()) {
-                $conditions['quan_huyen'] = Auth::user()->quan_huyen;
-            }
-            DB::table('skss_b4')->where($conditions)->update($inputs);
-        } else {
-            // tạo mới
-            $inputs['quan_huyen'] = Auth::user()->quan_huyen;
-            $inputs['nam'] = now()->format('Y');
-            $inputs['created_by'] = Auth::user()->email;
-            $inputs['updated_by'] = Auth::user()->email;
-            DB::table('skss_b4')->insert($inputs);
-        }
-        return redirect()->route('skss.b4.index');
-    }
-
-    public function deleteB4($id)
-    {
-        $conditions = ['id' => $id];
-        if (UserRole::isNormalUser()) {
-            $conditions['quan_huyen'] = Auth::user()->quan_huyen;
-        }
-        DB::table('skss_b4')->where($conditions)->delete();
-        return redirect()->route('skss.b4.index');
     }
 }

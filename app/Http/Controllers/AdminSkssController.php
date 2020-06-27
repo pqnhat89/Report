@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Enums\Skss\SkssB4;
+use App\Export\SkssB4Export;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Excel;
 
 class AdminSkssController extends Controller
 {
@@ -50,7 +52,7 @@ class AdminSkssController extends Controller
         ]);
     }
 
-    public function b4TongHop($nam, $loai)
+    public function b4TongHop(Request $request, $nam, $loai)
     {
         $b4 = DB::table('skss_b4')
             ->where([
@@ -84,7 +86,12 @@ class AdminSkssController extends Controller
             ])
             ->groupBy('nam', 'loai')
             ->first();
-        return view('skss.b4.showB4', [
+
+        if ($request->export) {
+            return Excel::download(new SkssB4Export($b4), time() . '.xlsx');
+        }
+
+        return view('skss.b4.show', [
             'b4' => $b4,
             'type' => 'tong-hop'
         ]);
