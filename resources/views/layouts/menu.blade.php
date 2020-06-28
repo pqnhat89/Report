@@ -1,7 +1,7 @@
 @auth
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            @if (Auth::user()->role == \App\Enums\UserRole::Admin)
+            @if (\App\Enums\UserRole::isAdmin())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.index') }}">Quản lý tài khoản</a>
                 </li>
@@ -16,7 +16,7 @@
                 </li>
             @endif
 
-            @if (Auth::user()->role == \App\Enums\UserRole::NormalUser)
+            @if (\App\Enums\UserRole::isNormalUser())
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Báo cáo Quận / Huyện

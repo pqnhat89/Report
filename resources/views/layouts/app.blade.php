@@ -65,7 +65,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        Thoát
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -82,7 +82,7 @@
         <main class="py-4">
             <div class="text-center text-danger">
                 @foreach ($errors->all() as $message)
-                    {!! $message !!}
+                    <h3>{!! $message !!}</h3>
                 @endforeach
             </div>
             @yield('content')

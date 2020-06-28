@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\LoaiBaoCao;
 use App\Enums\Skss\SkssB4;
 use App\Export\SkssB4Export;
 use Illuminate\Http\Request;
@@ -88,7 +89,9 @@ class AdminSkssController extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new SkssB4Export($b4), time() . '.xlsx');
+            $nam = $b4->nam;
+            $loai = LoaiBaoCao::getTitle($b4->loai);
+            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][skss-b4].xlsx");
         }
 
         return view('skss.b4.show', [

@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Enums\LoaiBaoCao;
 use App\Enums\Skss\SkssB4;
 use App\Enums\UserRole;
 use App\Export\SkssB4Export;
@@ -22,7 +23,7 @@ class SkssB4Controller extends Controller
     public function index()
     {
         $conditions = [];
-        if (Auth::user()->role != 2) {
+        if (UserRole::isNormalUser()) {
             $conditions[] = ['skss_b4.quan_huyen', Auth::user()->quan_huyen];
         }
         $b4 = DB::table('skss_b4')
@@ -62,7 +63,7 @@ class SkssB4Controller extends Controller
             ['skss_b4.id', $id]
         ];
 
-        if (Auth::user()->role != 2) {
+        if (UserRole::isNormalUser()) {
             $conditions[] = ['skss_b4.quan_huyen', Auth::user()->quan_huyen];
         }
         $b4 = DB::table('skss_b4')
@@ -75,7 +76,10 @@ class SkssB4Controller extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new SkssB4Export($b4), time() . '.xlsx');
+            $nam = $b4->nam;
+            $loai = LoaiBaoCao::getTitle($b4->loai);
+            $quanHuyen = $b4->quan_huyen_name;
+            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][Skss-b4][$quanHuyen].xlsx");
         }
 
         return view('skss.b4.show', [
@@ -98,7 +102,7 @@ class SkssB4Controller extends Controller
                 ['id', $id]
             ];
 
-            if (Auth::user()->role != 2) {
+            if (UserRole::isNormalUser()) {
                 $conditions[] = ['quan_huyen', Auth::user()->quan_huyen];
             }
 
@@ -120,8 +124,13 @@ class SkssB4Controller extends Controller
     public function save(Request $request, $id)
     {
         $inputs = $request->except('_token');
-        $inputs['updated_by'] = Auth::user()->email;
+        $inputs['quan_huyen'] = Auth::user()->quan_huyen;
         $inputs['updated_at'] = now();
+        $inputs['updated_by'] = Auth::user()->email;
+        if (UserRole::isAdmin()) {
+            $inputs['quan_huyen'] = $request->quan_huyen;
+        }
+
         if ($id) {
             // cập nhật
             $conditions = ['id' => $id];
@@ -131,13 +140,14 @@ class SkssB4Controller extends Controller
             DB::table('skss_b4')->where($conditions)->update($inputs);
         } else {
             // tạo mới
-            $inputs['quan_huyen'] = Auth::user()->quan_huyen;
             $inputs['nam'] = now()->format('Y');
+            $inputs['created_at'] = now();
             $inputs['created_by'] = Auth::user()->email;
-            $inputs['updated_by'] = Auth::user()->email;
             DB::table('skss_b4')->insert($inputs);
         }
-        return redirect()->route('skss.b4.index');
+
+        return redirect()->route('skss.b4.index')
+            ->withErrors("<span class='text-success'>Cập nhật thành công.</span>");
     }
 
     public function delete($id)

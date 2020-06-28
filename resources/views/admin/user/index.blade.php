@@ -1,26 +1,26 @@
 @component('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="text-center pb-5">
-        <h1>Quản lý tài khoản</h1>
-    </div>
+    <div class="container">
+        <div class="text-center pb-5">
+            <h1>Quản lý tài khoản</h1>
+        </div>
 
-    <div class="text-right pb-1">
-        <a class="btn btn-primary" href="#">Tạo mới</a>
-    </div>
+        <div class="text-right pb-1">
+            <a class="btn btn-primary" href="{{ route('user.create', ['email' => 0]) }}">Tạo mới</a>
+        </div>
 
-    <table class="table table-bordered table-hover table-striped">
-        <thead>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
             <tr>
                 <th>STT</th>
                 <th>Tên</th>
                 <th>Email</th>
-                <th>Cấp bậc</th>
+                <th>Trực thuộc</th>
                 <th width="1"></th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             @if (count($users))
                 @foreach ($users as $no => $user)
                     <tr>
@@ -30,33 +30,37 @@
                         <td>
                             @switch($user->role)
                                 @case(\App\Enums\UserRole::NormalUser)
-                                    {{ $user->qhname }}
-                                    @break
+                                {{ $user->qhname }}
+                                @break
                                 @case(\App\Enums\UserRole::Admin)
-                                    <strong>THÀNH PHỐ (quản trị)</strong>
-                                    @break
+                                <strong>THÀNH PHỐ (quản trị)</strong>
+                                @break
                                 @default
-                                    <i>Đang chờ xét duyệt</i>
+                                <i>Đang chờ xét duyệt</i>
                             @endswitch
                         </td>
                         <td nowrap>
-                            <a class="btn btn-primary" href="{{ route('user.change', ['email' => $user->email]) }}">Sửa</a>
+                            <a class="btn btn-primary"
+                               href="{{ route('user.edit', ['email' => $user->email]) }}">Sửa</a>
                             @if ($user->role != \App\Enums\UserRole::Admin)
-                                <form class="d-inline" method="post" action="{{ route('user.delete', ['email' => $user->email]) }}">
+                                <form class="d-inline" method="post"
+                                      action="{{ route('user.delete', ['email' => $user->email]) }}">
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Bạn có muốn xóa {{ $user->email }}?');">Xóa
+                                    </button>
                                 </form>
                             @endif
                         </td>
                     </tr>
                 @endforeach
             @else
-                    <tr>
-                        <td colspan="99">Không có dữ liệu</td>
-                    </tr>
+                <tr>
+                    <td colspan="99">Không có dữ liệu</td>
+                </tr>
             @endif
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 @endsection
 
 @endcomponent

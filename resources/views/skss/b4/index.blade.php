@@ -34,7 +34,9 @@
                             <form class="d-inline" method="POST"
                                   action="{{ route('skss.b4.delete', ['id' => $data->id]) }}">
                                 {{ csrf_field() }}
-                                <button class="btn btn-danger" type="submit">Xóa</button>
+                                <button class="btn btn-danger" typs4cone="submit"
+                                        onclick="return confirm('Bạn có muốn xóa STT {{ $no + 1 }}?');">Xóa
+                                </button>
                             </form>
                         </td>
                     </tr>

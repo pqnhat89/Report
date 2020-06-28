@@ -7,14 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserRole extends Enum
 {
-    const Admin = 2;
-    const NormalUser = 1;
-    const NewUser = 0;
+    const Admin = 1;
+    const NormalUser = 0;
 
     private static $title = [
         self::Admin => "Thành phố",
-        self::NormalUser => "Quận/Huyện",
-        self::NewUser => "Đăng ký mới",
+        self::NormalUser => "Quận/Huyện"
     ];
 
     public static function getTitle($key)
@@ -32,8 +30,4 @@ class UserRole extends Enum
         return Auth::user()->role == self::NormalUser;
     }
 
-    public static function isNewUser()
-    {
-        return Auth::user()->role == self::NewUser;
-    }
 }

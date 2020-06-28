@@ -15,7 +15,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Tên người dùng:</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" value="{{ $user->name }}" disabled>
+                                <input class="form-control" name="name" value="{{ $user->name ?? null }}" required {{ ($user ?? null) ? 'disabled' : null }}>
                             </div>
                         </div>
 
@@ -23,7 +23,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Email:</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" value="{{ $user->email }}" disabled>
+                                <input class="form-control" name="email" value="{{ $user->email ?? null }}" required {{ ($user ?? null) ? 'disabled' : null }}>
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@
                             <div class="col-md-6">
                                 @foreach(\App\Enums\UserRole::toArray() as $role)
                                 <label>
-                                    <input name="role" value="{{ $role }}" type="radio" {{ $user->role == $role ? 'checked' : null }}> {{ \App\Enums\UserRole::getTitle($role) }}
+                                    <input name="role" value="{{ $role }}" type="radio" {{ ($user->role ?? null) == $role ? 'checked' : null }}> {{ \App\Enums\UserRole::getTitle($role) }}
                                 </label><br>
                                 @endforeach
                             </div>
@@ -62,7 +62,7 @@
                                 <select class="form-control" name="quan_huyen">
                                     <option value="">Vui lòng chọn ...</option>
                                     @foreach ($quanHuyen as $data)
-                                        <option value="{{ $data->id}}" {{ $data->id == $user->quan_huyen ? 'selected' : null  }}>
+                                        <option value="{{ $data->id}}" {{ $data->id == ($user->quan_huyen ?? null) ? 'selected' : null  }}>
                                             {{ $data->name }}
                                         </option>
                                     @endforeach
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary">Thay đổi</button>
+                            <button type="submit" class="btn btn-primary">Gửi</button>
                         </div>
                 </div>
                 </form>

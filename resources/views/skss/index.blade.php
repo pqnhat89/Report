@@ -7,8 +7,8 @@
             <tr>
                 <th>STT</th>
                 <th>Loại</th>
-                @if (Auth::user()->role == \App\Enums\UserRole::Admin)
-                <th>Chi tiết</th>
+                @if (\App\Enums\UserRole::isAdmin())
+                <th></th>
                 @endif
             </tr>
         </thead>
@@ -21,9 +21,9 @@
                         {{ $type }} {{ $no ? " (đang cập nhật)" : null }}
                     </a>
                 </td>
-                @if (Auth::user()->role == \App\Enums\UserRole::Admin)
+                @if (\App\Enums\UserRole::isAdmin())
                 <td>
-                    <a href="{{ route('skss.'.$type.'.index') }}">Chi tiết</a>
+                    <a class="btn btn-link" href="{{ route('skss.'.$type.'.index') }}">Chi tiết</a>
                 </td>
                 @endif
             </tr>

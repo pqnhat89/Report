@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\UserRole;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,7 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role != 2) {
+        if (!UserRole::isAdmin()) {
             return redirect()->back()->withErrors('Người dùng không có quyền');
         }
         return $next($request);

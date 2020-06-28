@@ -34,7 +34,8 @@
                             Đơn vị báo cáo (TTYT Quận/huyện):
                         </th>
                         <th>
-                            <select class="form-control" disabled>
+                            <select class="form-control"
+                                    name="quan_huyen" {{ \App\Enums\UserRole::isNormalUser() ? 'disabled' : null }}>
                                 <option value="">Vui lòng chọn ...</option>
                                 @foreach ($quanHuyen as $data)
                                     <option
