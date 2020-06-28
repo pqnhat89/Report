@@ -14,44 +14,33 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert(
-            [
-                [
-                    'name' => 'Admin',
-                    'email' => 'pqnhat89@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 1,
-                    'quan_huyen' => 0,
-                ],
-                [
-                    'name' => 'Đà Nẵng',
-                    'email' => 'danang@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 1,
-                    'quan_huyen' => 0,
-                ],
-                [
-                    'name' => 'Hải Châu',
-                    'email' => 'haichau@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 0,
-                    'quan_huyen' => 1,
-                ],
-                [
-                    'name' => 'Cẩm Lệ',
-                    'email' => 'camle@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 0,
-                    'quan_huyen' => 2,
-                ],
-                [
-                    'name' => 'Thanh Khê',
-                    'email' => 'thanhkhe@gmail.com',
-                    'password' => bcrypt('123'),
-                    'role' => 0,
-                    'quan_huyen' => 3
-                ]
-            ]
-        );
+        $users = [
+            'pqnhat89@gmail.com' => 'Admin',
+            'danang@gmail.com' => 'Đà Nẵng',
+            'haichau@gmail.com' => 'Hải Châu',
+            'camle@gmail.com' => 'Cẩm Lệ',
+            'thanhkhe@gmail.com' => 'Thanh Khê',
+            'lienchieu@gmail.com' => 'Liên Chiểu',
+            'nguhanhson@gmail.com' => 'Ngũ Hành Sơn',
+            'sontra@gmail.com' => 'Sơn Trà',
+            'hoavang@gmail.com' => 'Hòa Vang',
+            'hoangsa@gmail.com' => 'Hoàng Sa',
+        ];
+
+        $data = [];
+        $i = 0;
+
+        foreach ($users as $email => $name) {
+            $data[] = [
+                'name' => $name,
+                'email' => $email,
+                'password' => bcrypt('123'),
+                'role' => $i > 1 ? 0 : 1,
+                'quan_huyen' => $i - 1 < 0 ? 0 : $i - 1,
+            ];
+            $i = $i + 1;
+        }
+
+        DB::table('users')->insert($data);
     }
 }

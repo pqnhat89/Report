@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -83,7 +83,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img src="/images/logo.png">
+                    <img src="/public/images/logo.png">
                 </div>
                 <div class="col-md-9">
                     <h2>SỞ Y TẾ THÀNH PHỐ ĐÀ NẴNG</h2>

@@ -2,6 +2,8 @@
 
 namespace Database\Seeds;
 
+use App\Enums\LoaiBaoCao;
+use App\Enums\UserRole;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,101 +16,48 @@ class SkssB4TableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('skss_b4')->insert(
-            [
-                [
-                    'nam' => 2020,
-                    'loai' => '3-thang',
-                    'quan_huyen' => 1,
-                    'one' => 1,
-                    'onedotone' => 11,
-                    'two' => 2,
-                    'twodotone' => 21,
-                    'three' => 3,
-                    'threedotone' => 31,
-                    'threedottwo' => 32,
-                    'threedotthree' => 33,
-                    'threedotfour' => 34,
-                    'threedotfive' => 35,
-                    'threedotsix' => 36,
-                    'threedotseven' => 37,
-                    'threedoteight' => 38,
-                    'threedotnine' => 39,
-                    'threedotten' => 310,
-                    'four' => 4,
-                    'five' => 5,
-                    'six' => 6,
-                    'sixdotone' => 61,
-                    'sixdottwo' => 62,
-                    'seven' => 7,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                    'created_by' => 'pqnhat89@gmail.com',
-                    'updated_by' => 'pqnhat89@gmail.com'
-                ],
+        $users = DB::table('users')
+            ->where('role', UserRole::NormalUser)
+            ->get();
+        $loais = LoaiBaoCao::toArray();
+        $nam = now()->format('Y');
+        $data = [];
 
-                [
-                    'nam' => 2020,
-                    'loai' => '3-thang',
-                    'quan_huyen' => 2,
-                    'one' => 1,
-                    'onedotone' => 11,
-                    'two' => 2,
-                    'twodotone' => 21,
-                    'three' => 3,
-                    'threedotone' => 31,
-                    'threedottwo' => 32,
-                    'threedotthree' => 33,
-                    'threedotfour' => 34,
-                    'threedotfive' => 35,
-                    'threedotsix' => 36,
-                    'threedotseven' => 37,
-                    'threedoteight' => 38,
-                    'threedotnine' => 39,
-                    'threedotten' => 310,
-                    'four' => 4,
-                    'five' => 5,
-                    'six' => 6,
-                    'sixdotone' => 61,
-                    'sixdottwo' => 62,
-                    'seven' => 7,
+        foreach ($users as $user) {
+            foreach ($loais as $loai) {
+                $data[] = [
+                    'nam' => $nam,
+                    'loai' => $loai,
+                    'quan_huyen' => $user->quan_huyen,
+                    'one' => rand(1, 100),
+                    'onedotone' => rand(1, 100),
+                    'two' => rand(1, 100),
+                    'twodotone' => rand(1, 100),
+                    'three' => rand(1, 100),
+                    'threedotone' => rand(1, 100),
+                    'threedottwo' => rand(1, 100),
+                    'threedotthree' => rand(1, 100),
+                    'threedotfour' => rand(1, 100),
+                    'threedotfive' => rand(1, 100),
+                    'threedotsix' => rand(1, 100),
+                    'threedotseven' => rand(1, 100),
+                    'threedoteight' => rand(1, 100),
+                    'threedotnine' => rand(1, 100),
+                    'threedotten' => rand(1, 100),
+                    'four' => rand(1, 100),
+                    'five' => rand(1, 100),
+                    'six' => rand(1, 100),
+                    'sixdotone' => rand(1, 100),
+                    'sixdottwo' => rand(1, 100),
+                    'seven' => rand(1, 100),
                     'created_at' => now(),
                     'updated_at' => now(),
-                    'created_by' => 'pqnhat89@gmail.com',
-                    'updated_by' => 'pqnhat89@gmail.com'
-                ],
+                    'created_by' => $user->email,
+                    'updated_by' => $user->email
+                ];
+            }
+        }
 
-                [
-                    'nam' => 2020,
-                    'loai' => '6-thang',
-                    'quan_huyen' => 1,
-                    'one' => 1,
-                    'onedotone' => 11,
-                    'two' => 2,
-                    'twodotone' => 21,
-                    'three' => 3,
-                    'threedotone' => 31,
-                    'threedottwo' => 32,
-                    'threedotthree' => 33,
-                    'threedotfour' => 34,
-                    'threedotfive' => 35,
-                    'threedotsix' => 36,
-                    'threedotseven' => 37,
-                    'threedoteight' => 38,
-                    'threedotnine' => 39,
-                    'threedotten' => 310,
-                    'four' => 4,
-                    'five' => 5,
-                    'six' => 6,
-                    'sixdotone' => 61,
-                    'sixdottwo' => 62,
-                    'seven' => 7,
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                    'created_by' => 'pqnhat89@gmail.com',
-                    'updated_by' => 'pqnhat89@gmail.com'
-                ]
-            ]
-        );
+        DB::table('skss_b4')->insert($data);
     }
 }

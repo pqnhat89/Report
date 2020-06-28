@@ -36,7 +36,9 @@ class SkssB4Controller extends Controller
             ->orderBy('skss_b4.id', 'desc')
             ->get();
 
-        return view('skss.b4.index', ['b4' => $b4]);
+        $quanHuyen = DB::table('quan_huyen')->get();
+
+        return view('skss.b4.index', ['b4' => $b4, 'quanHuyen' => $quanHuyen]);
     }
 
     public function create()
