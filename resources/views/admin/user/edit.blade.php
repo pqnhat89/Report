@@ -61,9 +61,9 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="quan_huyen">
                                     <option value="">Vui lòng chọn ...</option>
-                                    @foreach ($quanHuyen as $data)
-                                        <option value="{{ $data->id}}" {{ $data->id == ($user->quan_huyen ?? null) ? 'selected' : null  }}>
-                                            {{ $data->name }}
+                                    @foreach (\App\Enums\Locations::toArray() as $location)
+                                        <option value="{{ $location}}" {{ $location == ($user->location ?? null) ? 'selected' : null  }}>
+                                            {{ $location }}
                                         </option>
                                     @endforeach
                                 </select>

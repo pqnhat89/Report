@@ -2,8 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Database\Seeds\UsersTableSeeder;
-use Database\Seeds\SkssB4TableSeeder;
-use Database\Seeds\QuanHuyenTableSeeder;
+use Database\Seeds\ReportsTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UsersTableSeeder::class);
-        $this->call(QuanHuyenTableSeeder::class);
-        $this->call(SkssB4TableSeeder::class);
+        $this->call(ReportsTableSeeder::class);
     }
 }

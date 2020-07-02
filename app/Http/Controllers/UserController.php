@@ -16,25 +16,18 @@ class UserController extends Controller
     public function index()
     {
         $users = DB::table('users')
-            ->leftJoin('quan_huyen', 'users.quan_huyen', 'quan_huyen.id')
-            ->select(
-                'users.*',
-                'quan_huyen.name as qhname'
-            )
-            ->orderBy('users.id', 'desc')
+            ->orderBy('id', 'desc')
             ->get();
         return view('admin.user.index', ['users' => $users]);
     }
 
     public function edit(Request $request, $email)
     {
-        $quanHuyen = DB::table('quan_huyen')->get();
         $user = DB::table('users')
             ->where('email', $email)
             ->first();
         return view('admin.user.edit', [
-            'user' => $user,
-            'quanHuyen' => $quanHuyen,
+            'user' => $user
         ]);
     }
 
@@ -47,8 +40,8 @@ class UserController extends Controller
             }
             $inputs['password'] = $request->new_password;
         }
-        if ($request->quan_huyen) {
-            $inputs['quan_huyen'] = $request->quan_huyen;
+        if ($request->location) {
+            $inputs['location'] = $request->location;
         }
 
         if ($email) {
@@ -82,7 +75,6 @@ class UserController extends Controller
                 ->route('user.index')
                 ->withErrors('<span class="text-success">Tạo tài khoản "' . $request->email . '" thành công</span>');
         }
-
     }
 
     public function delete($email)

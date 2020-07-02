@@ -77,21 +77,25 @@ trait SoftDeletes
      */
     protected function runSoftDelete()
     {
-        $query = $this->setKeysForSaveQuery($this->newModelQuery());
+        // $query = $this->setKeysForSaveQuery($this->newModelQuery());
 
-        $time = $this->freshTimestamp();
+        // $time = $this->freshTimestamp();
 
-        $columns = [$this->getDeletedAtColumn() => $this->fromDateTime($time)];
+        // $columns = [$this->getDeletedAtColumn() => $this->fromDateTime($time)];
 
-        $this->{$this->getDeletedAtColumn()} = $time;
+        // $this->{$this->getDeletedAtColumn()} = $time;
 
-        if ($this->timestamps && ! is_null($this->getUpdatedAtColumn())) {
-            $this->{$this->getUpdatedAtColumn()} = $time;
+        // if ($this->timestamps && !is_null($this->getUpdatedAtColumn())) {
+        //     $this->{$this->getUpdatedAtColumn()} = $time;
 
-            $columns[$this->getUpdatedAtColumn()] = $this->fromDateTime($time);
-        }
+        //     $columns[$this->getUpdatedAtColumn()] = $this->fromDateTime($time);
+        // }
 
-        $query->update($columns);
+        // $query->update($columns);
+
+        $query = $this->newQueryWithoutScopes()->where($this->getKeyName(), $this->getKey());
+
+        $query->update([$this->getDeletedAtColumn() => true]);
     }
 
     /**
@@ -108,7 +112,7 @@ trait SoftDeletes
             return false;
         }
 
-        $this->{$this->getDeletedAtColumn()} = null;
+        $this->{$this->getDeletedAtColumn()} = false;
 
         // Once we have saved the model, we will fire the "restored" event so this
         // developer will do anything they need to after a restore operation is
@@ -129,7 +133,7 @@ trait SoftDeletes
      */
     public function trashed()
     {
-        return ! is_null($this->{$this->getDeletedAtColumn()});
+        return !is_null($this->{$this->getDeletedAtColumn()});
     }
 
     /**
@@ -171,7 +175,7 @@ trait SoftDeletes
      */
     public function getDeletedAtColumn()
     {
-        return defined('static::DELETED_AT') ? static::DELETED_AT : 'deleted_at';
+        return defined('static::IS_DELETED') ? static::IS_DELETED : 'deleted_at';
     }
 
     /**

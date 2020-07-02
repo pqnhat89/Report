@@ -1,7 +1,17 @@
 table th {
-    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle !important;
+    font-weight: normal;
 }
 
 .navbar-nav .nav-item {
     padding: 0 10px;
+}
+
+.overflow-x {
+    overflow-x: auto;
+}
+
+.nowrap {
+    white-space: nowrap;
 }

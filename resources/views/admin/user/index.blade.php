@@ -30,7 +30,7 @@
                         <td>
                             @switch($user->role)
                                 @case(\App\Enums\UserRole::NormalUser)
-                                {{ $user->qhname }}
+                                {{ $user->location }}
                                 @break
                                 @case(\App\Enums\UserRole::Admin)
                                 <strong>THÀNH PHỐ (quản trị)</strong>

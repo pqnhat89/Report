@@ -5,11 +5,11 @@ namespace App\Models;
 use App\Models\BaseBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Tsyama\LaravelSoftDeleteFlag\Traits\SoftDeleteFlagTrait;
 
 class BaseModel extends Model
 {
-    use SoftDeletes;
+    use SoftDeleteFlagTrait;
 
     protected $guarded = [];
 
@@ -20,6 +20,7 @@ class BaseModel extends Model
     const UPDATED_BY = 'updated_by';
 
     const IS_DELETED = 'is_deleted';
+    const DELETED_AT = 'is_deleted';
 
     public static function getTableName()
     {

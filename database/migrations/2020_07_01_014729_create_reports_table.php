@@ -16,10 +16,15 @@ class CreateReportsTable extends BaseMigration
     {
         Schema::create(static::TABLE_NAME, function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type', 128);
             $table->smallInteger('year');
-            $table->tinyInteger('month');
+            $table->string('month', 128);
+            $table->string('location', 128);
+            for ($i = 0; $i <= 100; $i++) {
+                $table->smallInteger(\PHPExcel_Cell::stringFromColumnIndex($i))->default(0);
+            }
+            $table->unique(['type', 'year', 'month', 'location']);
         });
-
         parent::up();
     }
 

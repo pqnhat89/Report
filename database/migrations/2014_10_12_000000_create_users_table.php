@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\BaseMigration;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateUsersTable extends BaseMigration
 {
+    const TABLE_NAME = 'users';
     /**
      * Run the migrations.
      *
@@ -13,17 +14,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create(static::TABLE_NAME, function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->tinyInteger('role')->default(0);
-            $table->tinyInteger('quan_huyen')->default(0);
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('location', 128);
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
         });
+        parent::up();
     }
 
     /**

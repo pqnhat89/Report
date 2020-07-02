@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Enums\LoaiBaoCao;
 use App\Enums\UserRole;
 use Closure;
 use Illuminate\Support\Facades\Auth;
@@ -37,58 +36,56 @@ class CheckPermission
     private static function forCreate($request)
     {
         // init data
-        $table = $request->t;
-        $nam = now()->format('Y');
-        $loai = $request->loai;
-        $quanHuyen = Auth::user()->quan_huyen;
+        $type = $request->t;
+        $year = now()->format('Y');
+        $month = $request->month;
+        $location = Auth::user()->location;
 
         // check permission
         if (UserRole::isAdmin()) {
-            $quanHuyen = $request->quan_huyen;
+            $location = $request->location;
         }
 
         // check exist
-        $data = DB::table($table)
+        $data = DB::table('reports')
             ->where([
-                'nam' => $nam,
-                'loai' => $loai,
-                'quan_huyen' => $quanHuyen
+                'type' => $type,
+                'year' => $year,
+                'month' => $month,
+                'location' => $location
             ])
             ->first();
         if ($data) {
-            $quanHuyen = (DB::table('quan_huyen')->where('id', $quanHuyen)->first())->name ?? null;
-            $loai = LoaiBaoCao::getTitle($loai);
-            return redirect()->back()->withErrors("Dữ liệu $loai của $quanHuyen trong năm $nam đã tồn tại");
+            return redirect()->back()->withErrors("Dữ liệu $month của $location trong năm $year đã tồn tại");
         }
     }
 
     private static function forEdit($request)
     {
         // init data
-        $table = $request->t;
+        $type = $request->t;
         $id = $request->id;
-        $nam = now()->format('Y');
-        $loai = $request->loai;
-        $quanHuyen = Auth::user()->quan_huyen;
+        $year = now()->format('Y');
+        $month = $request->month;
+        $location = Auth::user()->location;
 
         // check permission
         if (UserRole::isAdmin()) {
-            $quanHuyen = $request->quan_huyen;
+            $location = $request->location;
         }
 
         // check exist
-        $data = DB::table($table)
+        $data = DB::table('reports')
             ->where([
-                'nam' => $nam,
-                'loai' => $loai,
-                'quan_huyen' => $quanHuyen
+                'type' => $type,
+                'year' => $year,
+                'month' => $month,
+                'location' => $location
             ])
             ->whereNotIn('id', [$id])
             ->first();
         if ($data) {
-            $quanHuyen = (DB::table('quan_huyen')->where('id', $quanHuyen)->first())->name ?? null;
-            $loai = LoaiBaoCao::getTitle($loai);
-            return redirect()->back()->withErrors("Dữ liệu $loai của $quanHuyen trong năm $nam đã tồn tại");
+            return redirect()->back()->withErrors("Dữ liệu $month của $location trong năm $year đã tồn tại");
         }
     }
 }

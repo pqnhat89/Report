@@ -4,17 +4,20 @@
 namespace App\Http\Controllers;
 
 
+use Excel;
+use App\Enums\Types;
+use App\Enums\UserRole;
+use App\Models\Reports;
 use App\Enums\LoaiBaoCao;
 use App\Enums\Skss\SkssB4;
-use App\Enums\UserRole;
 use App\Export\SkssB4Export;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Excel;
+use Illuminate\Support\Facades\Auth;
 
 class SkssB4Controller extends Controller
 {
+    private static $type = Types::SKSS_B4;
     public function __construct()
     {
         $this->middleware('auth');
@@ -22,23 +25,20 @@ class SkssB4Controller extends Controller
 
     public function index()
     {
-        $conditions = [];
+        $conditions = [
+            ['type', self::$type]
+        ];
         if (UserRole::isNormalUser()) {
-            $conditions[] = ['skss_b4.quan_huyen', Auth::user()->quan_huyen];
+            $conditions[] = [
+                'location', Auth::user()->location
+            ];
         }
-        $b4 = DB::table('skss_b4')
-            ->leftJoin('quan_huyen', 'skss_b4.quan_huyen', 'quan_huyen.id')
+        $b4 = DB::table('reports')
             ->where($conditions)
-            ->select([
-                'skss_b4.*',
-                'quan_huyen.name as quan_huyen_name'
-            ])
-            ->orderBy('skss_b4.id', 'desc')
+            ->orderBy('id', 'desc')
             ->get();
 
-        $quanHuyen = DB::table('quan_huyen')->get();
-
-        return view('skss.b4.index', ['b4' => $b4, 'quanHuyen' => $quanHuyen]);
+        return view('skss.b4.index', ['b4' => $b4]);
     }
 
     public function create()
@@ -92,23 +92,20 @@ class SkssB4Controller extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $quanHuyen = DB::table('quan_huyen')->get();
-
-        $fields = SkssB4::toArray();
-
         if ($id) {
             // edit
             $conditions = [
-                ['id', $id]
+                ['id', $id],
+                ['type' => $request->t]
             ];
 
             if (UserRole::isNormalUser()) {
-                $conditions[] = ['quan_huyen', Auth::user()->quan_huyen];
+                $conditions[] = ['location', Auth::user()->location];
             }
 
-            $b4 = DB::table('skss_b4')->where($conditions)->first();
+            $b4 = Reports::where($conditions)->first();
 
             if (!$b4) {
                 return redirect()->back()->withErrors('Người dùng không có quyền');
@@ -116,10 +113,7 @@ class SkssB4Controller extends Controller
         }
 
         return view('skss.b4.edit', [
-            'quanHuyen' => $quanHuyen ?? [],
-            'fields' => $fields ?? [],
-            'b4' => $b4 ?? null,
-            'type' => 'sua'
+            'b4' => $b4 ?? null
         ]);
     }
 

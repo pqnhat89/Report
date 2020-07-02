@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Enums\LoaiBaoCao;
-use App\Enums\Skss\SkssB4;
 use App\Export\SkssB4Export;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Excel;
 
