@@ -69,6 +69,14 @@
                 </table>
             </div>
             <div class="row pt-5">
+                <div class="col-sm">
+                    <select class="form-control" name="month" required>
+                        <option value="">Vui lòng chọn Quý ...</option>
+                        @foreach (\App\Enums\Months::toArray() as $month)
+                            <option value="{{ $month }}" {{ ($report->month ?? null) == $month ? 'selected' : null }}>{{ $month }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="col-sm text-right">
                     <button type="submit" class="btn btn-primary">Lưu</button>
                 </div>

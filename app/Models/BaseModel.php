@@ -9,7 +9,7 @@ use Tsyama\LaravelSoftDeleteFlag\Traits\SoftDeleteFlagTrait;
 
 class BaseModel extends Model
 {
-    use SoftDeleteFlagTrait;
+    // use SoftDeleteFlagTrait;
 
     protected $guarded = [];
 

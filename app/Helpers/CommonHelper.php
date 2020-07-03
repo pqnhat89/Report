@@ -8,7 +8,7 @@ function getConditions()
 {
     $conditions = [
         'type' => Types::toArray()[request()->type],
-        'location' => Auth::user()->location
+        'location' => Auth::user()->location,
     ];
 
     if (UserRole::isAdmin()) {

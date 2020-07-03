@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reports;
+use App\Exports\Export;
 use Illuminate\Http\Request;
+use Excel;
 
 class ReportController extends Controller
 {
@@ -23,13 +25,68 @@ class ReportController extends Controller
         return view('report.index', ['reports' => $reports]);
     }
 
+    public function show(Request $request)
+    {
+        $conditions = getConditions();
+
+        $report = Reports::where($conditions)
+            ->first();
+
+        if ($request->export) {
+            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xlsx");
+        }
+
+        return view(
+            "report." . $request->type . ".show",
+            ['report' => $report]
+        );
+    }
+
     public function create(Request $request)
     {
         return view("report." . $request->type . ".edit");
     }
 
+    public function edit(Request $request)
+    {
+        $conditions = getConditions();
+
+        $report = Reports::where($conditions)
+            ->first();
+
+        return view(
+            "report." . $request->type . ".edit",
+            ['report' => $report]
+        );
+    }
+
     public function save(Request $request)
     {
-        dd($request->all());
+        $inputs = $request->except('_token');
+        $conditions = getConditions();
+        $year = now()->format('Y');
+        if ($request->id) {
+            // edit
+            Reports::where($conditions)
+                ->update($inputs);
+        } else {
+            // new
+            Reports::insert(
+                array_merge(
+                    $inputs,
+                    $conditions,
+                    ['year' => $year]
+                )
+            );
+        }
+        return redirect()->route('report.index', ['type' => $request->type])
+            ->withErrors("<span class='text-success'>Lưu báo cáo thành công !!!</span>");
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $conditions = getConditions();
+        Reports::where($conditions)->delete();
+        return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công !!!</span>");
     }
 }
