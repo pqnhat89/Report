@@ -3,7 +3,7 @@
         <ul class="navbar-nav mr-auto">
             @if (\App\Enums\UserRole::isAdmin())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ '#' }}">Quản lý tài khoản</a>
+                    <a class="nav-link" href="{{ route('user.index') }}">Quản lý tài khoản</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
