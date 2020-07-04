@@ -20,7 +20,7 @@ class CheckPermission
     public function handle($request, Closure $next)
     {
         $check = null;
-        if ($request->isMethod('post')) {
+        if ($request->isMethod('post') && !in_array($request->path(), ['login', 'logout'])) {
             if ($request->id) {
                 $check = self::forEdit($request);
             } else {
