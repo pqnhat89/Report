@@ -13,11 +13,12 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $users = DB::table('users')
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(50)
+            ->appends($request->all());
         return view('admin.user.index', ['users' => $users]);
     }
 

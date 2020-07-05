@@ -28,14 +28,14 @@ class Locations extends Enum
     const BV_BINHDAN = "Bệnh viện Bình Dân";
     const BV_VINMEC = "Bệnh viện Vinmec";
 
-    private static $tuyenTinh = [
+    public static $tuyenTinh = [
         self::BV_PHUSAN_NHI,
         self::BV_DANANG,
         self::TT_KIEMSOATBENHTAT,
         self::BV_PHUBU
     ];
 
-    private static $tuyenHuyen = [
+    public static $tuyenHuyen = [
         self::HAICHAU,
         self::THANHKHE,
         self::SONTRA,
@@ -45,7 +45,7 @@ class Locations extends Enum
         self::HOAVANG
     ];
 
-    private static $tuNhan = [
+    public static $tuNhan = [
         self::BV_HOANMY,
         self::BV_GIADINH,
         self::BV_TAMTRI,

@@ -6,8 +6,17 @@
             <h1>Quản lý tài khoản</h1>
         </div>
 
-        <div class="text-right pb-1">
-            <a class="btn btn-primary" href="{{ route('user.create', ['email' => 0]) }}">Tạo mới</a>
+        <div class="row">
+            <div class="col-md">
+                <div class="mb-3">
+                    <a class="btn btn-primary" href="{{ route('user.create', ['email' => 0]) }}">Tạo mới</a>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="float-right">
+                    {{ $users->links() }}
+                </div>
+            </div>
         </div>
 
         <table class="table table-bordered table-hover table-striped">
@@ -61,6 +70,16 @@
             @endif
             </tbody>
         </table>
+
+        <div class="row">
+            <div class="col-md">
+            </div>
+            <div class="col-md">
+                <div class="float-right">
+                    {{ $users->links() }}
+                </div>
+            </div>
+        </div>
 @endsection
 
 @endcomponent

@@ -14,13 +14,14 @@ class ReportController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $conditions = getConditions();
 
         $reports = Reports::where($conditions)
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(50)
+            ->appends($request->all());
 
         return view('report.index', ['reports' => $reports]);
     }
@@ -33,7 +34,7 @@ class ReportController extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xlsx");
+            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
         }
 
         return view(

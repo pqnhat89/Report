@@ -21,7 +21,9 @@ class CheckPermission
     {
         $check = null;
         if ($request->isMethod('post') && !in_array($request->path(), ['login', 'logout'])) {
-            if ($request->id) {
+            if ($request->route()->getName() == 'report.delete') {
+                // skip
+            } else if ($request->id) {
                 $check = self::forEdit($request);
             } else {
                 $check = self::forCreate($request);
@@ -70,6 +72,7 @@ class CheckPermission
         $data = Reports::where($conditions)
             ->whereNotIn('id', [$id])
             ->first();
+
         if ($data) {
             return redirect()->back()->withErrors("Dữ liệu " . $conditions['month'] . " của " . $conditions['location'] . " trong năm " . $conditions['year'] . " đã tồn tại");
         }

@@ -8,6 +8,7 @@ use App\Exports\Export;
 use App\Models\Reports;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Excel;
 
 class AdminReportController extends Controller
 {
@@ -16,17 +17,35 @@ class AdminReportController extends Controller
         $this->middleware('admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $conditions = getConditions();
 
         $reports = Reports::where($conditions)
             ->select('year', 'month', DB::raw('count(location) as count'))
             ->groupBy('year', 'month')
-//            ->orderBy('id', 'desc')
-            ->get();
+            ->orderBy('year', 'desc')
+            ->paginate(50)
+            ->appends($request->all());
 
         return view('admin.report.index', ['reports' => $reports]);
+    }
+
+    public function sum(Request $request)
+    {
+        $conditions = getConditions();
+
+        $reports = Reports::where($conditions)->get();
+
+        if ($request->export) {
+            $report = $reports[0];
+            return Excel::download(new Export($reports), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
+        }
+
+        return view(
+            "report." . $request->type . ".show",
+            ['reports' => $reports]
+        );
     }
 
     public function show(Request $request)
@@ -37,7 +56,7 @@ class AdminReportController extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xlsx");
+            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
         }
 
         return view(

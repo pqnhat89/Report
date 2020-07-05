@@ -37,8 +37,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
      // for reports
      Route::group(['prefix' => '{type}'], function () {
-         Route::get('/', 'AdminReportController@index');
-         Route::get('/{nam}/{loai}', 'AdminSkssController@b4TongHop');
+         Route::get('/', 'AdminReportController@index')->name('admin.report.index');
+         Route::get('/{year}/{month}', 'AdminReportController@sum')->name('admin.report.sum');
      });
  });
 

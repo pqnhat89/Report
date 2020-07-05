@@ -89,7 +89,7 @@ class AdminSkssController extends Controller
         if ($request->export) {
             $nam = $b4->nam;
             $loai = LoaiBaoCao::getTitle($b4->loai);
-            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][skss-b4].xlsx");
+            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][skss-b4].xls");
         }
 
         return view('skss.b4.show', [

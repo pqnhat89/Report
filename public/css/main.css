@@ -1,8 +1,10 @@
-th,
-td {
-    text-align: center;
+table {
     vertical-align: middle !important;
     font-weight: normal;
+}
+
+th {
+    text-align: center;
 }
 
 .navbar-nav .nav-item {

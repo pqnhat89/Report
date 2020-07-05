@@ -81,7 +81,7 @@ class SkssB4Controller extends Controller
             $nam = $b4->nam;
             $loai = LoaiBaoCao::getTitle($b4->loai);
             $quanHuyen = $b4->quan_huyen_name;
-            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][Skss-b4][$quanHuyen].xlsx");
+            return Excel::download(new SkssB4Export($b4), "[$nam][$loai][Skss-b4][$quanHuyen].xls");
         }
 
         return view('skss.b4.show', [

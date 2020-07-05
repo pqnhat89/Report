@@ -5,12 +5,14 @@
         <p>Biểu số: 4/BCH</p>
         <div class="text-center pb-5">
             <h1>HOẠT ĐỘNG CHĂM SÓC BÀ MẸ</h1>
-            <h4>Báo cáo {{ $report->month }} năm {{ $report->year }}</h4>
+            <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
+            <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
+            <h4>Báo cáo {{ $month }} năm {{ $year }}</h4>
         </div>
         <form method="POST">
             {{ csrf_field() }}
             <div class="overflow-x">
-                @component('report.'.request()->type.'.show-template', ['report' => $report])
+                @component('report.'.request()->type.'.show-template', ['report' => $report ?? [], 'reports' => $reports ?? []])
                 @endcomponent
             </div>
         </form>

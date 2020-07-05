@@ -16,4 +16,8 @@ class Types extends Enum
     const B11 = "B11";
     const DINH_DUONG = "Dinh dưỡng";
     const HIV = "HIV";
+
+    public static function getTitle($type){
+        return self::toArray()[$type] ?? null;
+    }
 }
