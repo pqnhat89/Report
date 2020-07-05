@@ -29,4 +29,9 @@
     <th>Tuần đầu</th>
     <th>Từ tuần 2 đến hết 6 tuần</th>
 </tr>
+<tr>
+    @for($i=1; $i<=22; $i++)
+        <td class="text-center"><i>{{ $i }}</i></td>
+    @endfor
+</tr>
 </thead>

@@ -14,11 +14,6 @@
                     @component('report.'.request()->type.'.thead')@endcomponent
                     <tbody>
                     <tr>
-                        @for($i=1; $i<=18; $i++)
-                            <td class="text-center">{{ $i }}</td>
-                        @endfor
-                    </tr>
-                    <tr>
                         <td class="text-center">I</td>
                         <td class="text-center nowrap">
                             @if (\App\Enums\UserRole::isAdmin())

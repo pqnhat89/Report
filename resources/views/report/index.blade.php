@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <table class="table table-bordered table-hover table-striped">
+        <table class="table table-bordered table-hover table-striped text-center">
             <thead>
             <tr>
                 <th>STT</th>
@@ -32,6 +32,7 @@
                 @if (\App\Enums\UserRole::isAdmin())
                     <th>Cơ sở</th>
                 @endif
+                <th>Trạng thái</th>
                 <th width="1"></th>
             </tr>
             </thead>
@@ -45,18 +46,23 @@
                         @if (\App\Enums\UserRole::isAdmin())
                             <td nowrap>{{ $report->location }}</td>
                         @endif
+                        <td>
+                            {!! \App\Enums\Status::getTitle($report->status) !!}
+                        </td>
                         <td nowrap>
                             <a class="btn btn-info"
                                href="{{ route('report.show', ['type' => request()->type, 'id' => $report->id]) }}">Xem</a>
-                            <a class="btn btn-primary"
-                               href="{{ route('report.edit', ['type' => request()->type, 'id' => $report->id]) }}">Sửa</a>
-                            <form class="d-inline" method="POST"
-                                  action="{{ route('report.delete', ['type' => request()->type, 'id' => $report->id]) }}">
-                                {{ csrf_field() }}
-                                <button class="btn btn-danger" typs4cone="submit"
-                                        onclick="return confirm('Bạn có muốn xóa STT {{ $no + 1 }}?');">Xóa
-                                </button>
-                            </form>
+                            @if (!$report->status)
+                                <a class="btn btn-primary"
+                                   href="{{ route('report.edit', ['type' => request()->type, 'id' => $report->id]) }}">Sửa</a>
+                                <form class="d-inline" method="POST"
+                                      action="{{ route('report.delete', ['type' => request()->type, 'id' => $report->id]) }}">
+                                    {{ csrf_field() }}
+                                    <button class="btn btn-danger" type="submit"
+                                            onclick="return confirm('Bạn có muốn xóa STT {{ $no + 1 }}?');">Xóa
+                                    </button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

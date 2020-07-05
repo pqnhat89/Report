@@ -1,11 +1,6 @@
 <table class="table table-bordered" style="width: 3000px!important">
     @component('report.'.request()->type.'.thead')@endcomponent
     <tbody>
-    <tr>
-        @for($i=1; $i<=18; $i++)
-            <td style="text-align: center">{{ $i }}</td>
-        @endfor
-    </tr>
     @if ($report ?? false)
         <tr>
             <td style="text-align: center">I</td>

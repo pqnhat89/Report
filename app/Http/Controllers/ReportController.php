@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Status;
 use App\Models\Reports;
 use App\Exports\Export;
 use Illuminate\Http\Request;
@@ -69,6 +70,7 @@ class ReportController extends Controller
         if ($request->id) {
             // edit
             Reports::where($conditions)
+                ->where('status', Status::UNLOCK)
                 ->update($inputs);
         } else {
             // new
@@ -87,7 +89,9 @@ class ReportController extends Controller
     public function delete(Request $request, $id)
     {
         $conditions = getConditions();
-        Reports::where($conditions)->delete();
+        Reports::where($conditions)
+            ->where('status', Status::UNLOCK)
+            ->delete();
         return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công !!!</span>");
     }
 }

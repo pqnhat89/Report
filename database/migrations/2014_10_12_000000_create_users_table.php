@@ -19,7 +19,7 @@ class CreateUsersTable extends BaseMigration
             $table->string('name');
             $table->string('email')->unique();
             $table->tinyInteger('role')->default(0);
-            $table->string('location', 128);
+            $table->string('location', 128)->nullable();
             $table->string('password');
             $table->rememberToken();
         });

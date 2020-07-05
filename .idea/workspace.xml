@@ -20,26 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4af8f209-fe3c-4a11-a5ff-35e100824e61.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4af8f209-fe3c-4a11-a5ff-35e100824e61/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/Types.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/skss/b4/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/component/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show-template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/skss/b4/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/skss/b4/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/skss/b4/show-template.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/skss/b4/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/skss/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +197,8 @@
       <workItem from="1593916575874" duration="2764000" />
       <workItem from="1593928942822" duration="313000" />
       <workItem from="1593965851926" duration="986000" />
-      <workItem from="1593967292011" duration="3702000" />
+      <workItem from="1593967292011" duration="4770000" />
+      <workItem from="1593987849670" duration="4045000" />
     </task>
     <servers />
   </component>
@@ -231,10 +227,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="710" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593898018797" />
-    <state x="273" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593902892174">
+    <state x="273" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593990763659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="273" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593902892174" />
+    <state x="273" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593990763659" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593902234561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -261,10 +257,10 @@
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593967950969" />
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593230147735" />
-    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1593901925675">
+    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1593989226432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593901925675" />
+    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593989226432" />
     <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593239643640" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1593969902440">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -283,20 +279,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="846" y="407" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593929230581" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1593970469914">
+    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1593988738559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593970469914" />
+    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593988738559" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593315546036" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1593917094137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593917094137" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593255873646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593971009185">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593990750032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593971009185" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593990750032" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593334671624" />
   </component>
 </project>

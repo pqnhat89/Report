@@ -22,7 +22,12 @@ class AdminReportController extends Controller
         $conditions = getConditions();
 
         $reports = Reports::where($conditions)
-            ->select('year', 'month', DB::raw('count(location) as count'))
+            ->select(
+                'year',
+                'month',
+                DB::raw('count(location) as count'),
+                DB::raw('sum(status) as status')
+            )
             ->groupBy('year', 'month')
             ->orderBy('year', 'desc')
             ->paginate(50)
@@ -111,5 +116,17 @@ class AdminReportController extends Controller
         $conditions = getConditions();
         Reports::where($conditions)->delete();
         return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công !!!</span>");
+    }
+
+    public function lock(Request $request)
+    {
+        $conditions = getConditions();
+
+        Reports::where($conditions)
+            ->update([
+                'status' => $request->status
+            ]);
+
+        return redirect()->back()->withErrors("<span class='text-success'>Cập nhật trạng thái thành công !!!</span>");
     }
 }

@@ -29,4 +29,9 @@
     <th>Mắc</th>
     <th>TV</th>
 </tr>
+<tr>
+    @for($i=1; $i<=18; $i++)
+        <td style="text-align: center"><i>{{ $i }}</i></td>
+    @endfor
+</tr>
 </thead>

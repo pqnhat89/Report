@@ -38,6 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
      // for reports
      Route::group(['prefix' => '{type}'], function () {
          Route::get('/', 'AdminReportController@index')->name('admin.report.index');
+         Route::post('/lock', 'AdminReportController@lock')->name('admin.report.lock');
          Route::get('/{year}/{month}', 'AdminReportController@sum')->name('admin.report.sum');
      });
  });

@@ -20,6 +20,7 @@ class CreateReportsTable extends BaseMigration
             $table->smallInteger('year');
             $table->string('month', 128);
             $table->string('location', 128);
+            $table->tinyInteger('status')->default(0);
             for ($i = 0; $i <= 100; $i++) {
                 $table->smallInteger(\PHPExcel_Cell::stringFromColumnIndex($i))->default(0);
             }

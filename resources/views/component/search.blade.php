@@ -34,11 +34,12 @@
         <div class="form-group col-md-3">
             <label style="width: 100%">&nbsp;</label>
             <div class="nowrap">
-                <button type="submit" class="form-control btn btn-info" name="search" value="on"
-                        style="max-width: 100px">Tìm kiếm
+                <button type="submit" class="form-control btn btn-info" style="max-width: 100px">
+                    Tìm kiếm
                 </button>
-                <a class="form-control btn btn-secondary" href="{{ url()->current() }}" style="max-width: 100px">Làm
-                    mới</a>
+                <a class="form-control btn btn-secondary" href="{{ url()->current() }}" style="max-width: 100px">
+                    Làm mới
+                </a>
             </div>
         </div>
     </div>
