@@ -20,7 +20,7 @@ class CheckPermission
     public function handle($request, Closure $next)
     {
         $check = null;
-        if ($request->isMethod('post') && !in_array($request->path(), ['login', 'logout'])) {
+        if ($request->isMethod('post') && $request->type) {
             if ($request->route()->getName() == 'report.delete') {
                 // skip
             } else if ($request->id) {

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="text-center">
-            <h1>HOẠT ĐỘNG CHĂM SÓC BÀ MẸ</h1>
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
         </div>
 
         @component('component.search')@endcomponent

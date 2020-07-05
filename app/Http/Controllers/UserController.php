@@ -39,7 +39,7 @@ class UserController extends Controller
             if ($request->new_password != $request->re_password) {
                 return back()->withErrors('Nhập lại mật khẩu mới không trùng khớp');
             }
-            $inputs['password'] = $request->new_password;
+            $inputs['password'] = bcrypt($request->new_password);
         }
         if ($request->location) {
             $inputs['location'] = $request->location;
@@ -69,7 +69,7 @@ class UserController extends Controller
                 ->insert([
                     'name' => $request->name,
                     'email' => $request->email,
-                    'password' => $request->new_password,
+                    'password' => bcrypt($request->new_password),
                     'role' => $request->role,
                 ]);
             return redirect()

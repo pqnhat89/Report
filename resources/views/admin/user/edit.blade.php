@@ -59,7 +59,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">Trực thuộc Quận/Huyện:</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="quan_huyen">
+                                <select class="form-control" name="location">
                                     <option value="">Vui lòng chọn ...</option>
                                     @foreach (\App\Enums\Locations::toArray() as $location)
                                         <option value="{{ $location}}" {{ $location == ($user->location ?? null) ? 'selected' : null  }}>

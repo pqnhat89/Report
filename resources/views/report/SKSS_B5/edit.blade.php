@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <p>Biểu số: 4/BCH</p>
+        <p>Biểu số: 5/BCH</p>
         <div class="text-center pb-5">
             <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
             <h4>Báo cáo 3, 6, 9 và 12 tháng</h4>
@@ -14,7 +14,7 @@
                     @component('report.'.request()->type.'.thead')@endcomponent
                     <tbody>
                     <tr>
-                        @for($i=1; $i<=22; $i++)
+                        @for($i=1; $i<=18; $i++)
                             <td class="text-center">{{ $i }}</td>
                         @endfor
                     </tr>
@@ -25,7 +25,8 @@
                                 <select class="form-control" name="location" required>
                                     <option value="">Vui lòng chọn ...</option>
                                     @foreach(\App\Enums\Locations::toArray() as $location)
-                                        <option value="{{ $location }}" {{ ($report->location ?? null) == $location ? 'selected' : null }}>
+                                        <option
+                                            value="{{ $location }}" {{ ($report->location ?? null) == $location ? 'selected' : null }}>
                                             {{ $location }}
                                         </option>
                                     @endforeach
@@ -34,9 +35,7 @@
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
-                        @for($i=0; $i<=17; $i++)
+                        @for($i=0; $i<=15; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"

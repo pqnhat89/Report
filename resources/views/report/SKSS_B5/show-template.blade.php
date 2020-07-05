@@ -2,7 +2,7 @@
     @component('report.'.request()->type.'.thead')@endcomponent
     <tbody>
     <tr>
-        @for($i=1; $i<=22; $i++)
+        @for($i=1; $i<=18; $i++)
             <td style="text-align: center">{{ $i }}</td>
         @endfor
     </tr>
@@ -12,9 +12,7 @@
             <td class="nowrap">
                 {{ $report->location }}
             </td>
-            <td></td>
-            <td></td>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $report->$column }}
@@ -26,9 +24,7 @@
         <tr>
             <td></td>
             <td class="nowrap" style="text-align: center; font-weight: bold">TỔNG SỐ</td>
-            <td></td>
-            <td></td>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $reports->sum($column) }}
@@ -38,10 +34,8 @@
         <tr>
             <td style="text-align: center; font-weight: bold">A</td>
             <td nowrap style="font-weight: bold">Y tế công</td>
-            <td></td>
-            <td></td>
             <?php $reportsss = $reports->whereIn('location', array_merge(\App\Enums\Locations::$tuyenTinh, \App\Enums\Locations::$tuyenHuyen)) ?>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $reportsss->sum($column) }}
@@ -51,10 +45,8 @@
         <tr>
             <td style="text-align: center; font-weight: bold">I</td>
             <td nowrap style="font-weight: bold">Tuyến tỉnh</td>
-            <td></td>
-            <td></td>
             <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuyenTinh) ?>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $reportsss->sum($column) }}
@@ -66,10 +58,8 @@
             <tr>
                 <td style="text-align: center">{{ $no++ }}</td>
                 <td nowrap style="color: red">{{ $tuyenTinh }}</td>
-                <td></td>
-                <td></td>
                 @php $report = $reports->where('location', $tuyenTinh) @endphp
-                @for($i=0; $i<=17; $i++)
+                @for($i=0; $i<=15; $i++)
                     @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                     <td>
                         {{ $report->sum($column) }}
@@ -80,10 +70,8 @@
         <tr>
             <td style="text-align: center; font-weight: bold">II</td>
             <td nowrap style="font-weight: bold">Tuyến huyện</td>
-            <td></td>
-            <td></td>
             <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuyenHuyen) ?>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $reportsss->sum($column) }}
@@ -95,10 +83,8 @@
             <tr>
                 <td style="text-align: center">{{ $no++ }}</td>
                 <td nowrap style="color: purple">{{ $tuyenHuyen }}</td>
-                <td></td>
-                <td></td>
                 @php $report = $reports->where('location', $tuyenHuyen) @endphp
-                @for($i=0; $i<=17; $i++)
+                @for($i=0; $i<=15; $i++)
                     @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                     <td>
                         {{ $report->sum($column) }}
@@ -109,10 +95,8 @@
         <tr>
             <td style="text-align: center; font-weight: bold">B</td>
             <td nowrap style="font-weight: bold">Y tế tư nhân</td>
-            <td></td>
-            <td></td>
             <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuNhan) ?>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=15; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $reportsss->sum($column) }}
@@ -124,10 +108,8 @@
             <tr>
                 <td style="text-align: center">{{ $no++ }}</td>
                 <td nowrap style="color: blue">{{ $tuNhan }}</td>
-                <td></td>
-                <td></td>
                 @php $report = $reports->where('location', $tuNhan) @endphp
-                @for($i=0; $i<=17; $i++)
+                @for($i=0; $i<=15; $i++)
                     @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                     <td>
                         {{ $report->sum($column) }}
