@@ -21,20 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show-template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,13 +146,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/report/SKSS_B4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/report" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\Report\resources\views\report\SKSS_B4" />
       <recent name="D:\Projects\Report\resources\views\report" />
+      <recent name="D:\Projects\Report\resources\views\report\SKSS_B4" />
       <recent name="D:\Projects\Report\resources\views\admin\report" />
       <recent name="D:\Projects\Report" />
       <recent name="E:\Projects\Report" />
@@ -198,7 +186,7 @@
       <workItem from="1593928942822" duration="313000" />
       <workItem from="1593965851926" duration="986000" />
       <workItem from="1593967292011" duration="4770000" />
-      <workItem from="1593987849670" duration="4045000" />
+      <workItem from="1593987849670" duration="6042000" />
     </task>
     <servers />
   </component>

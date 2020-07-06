@@ -30,7 +30,7 @@
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif
                         </td>
-                        @for($i=0; $i<=15; $i++)
+                        @for($i=0; $i<=11; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
