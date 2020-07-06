@@ -24,14 +24,13 @@ class ReportsTableSeeder extends Seeder
         $locations = Locations::toArray();
         $months = Months::toArray();
         $types = Types::toArray();
-        $year = now()->format('Y');
         $datas = [];
         foreach ($types as $type) {
             foreach ($locations as $location) {
                 foreach ($months as $month) {
                     $data = [
                         'type' => $type,
-                        'year' => $year,
+                        'year' => rand(2019, 2020),
                         'month' => $month,
                         'location' => $location
                     ];

@@ -17,7 +17,23 @@ class Types extends Enum
     const DINH_DUONG = "BÁO CÁO HOẠT ĐỘNG CẢI THIỆN TÌNH TRẠNG DINH DƯỠNG TRẺ EM 2020";
     const HIV = "BÁO CÁO KẾT QUẢ SÀNG LỌC HIV";
 
+    private static $titles = [
+        self::SKSS_B4 => 'Biểu số: 4/BCH',
+        self::SKSS_B5 => 'Biểu số: 5/BCH',
+        self::SKSS_B6 => 'Biểu số: 6/BCH',
+        self::SKSS_B7 => 'Biểu số: 7/BCH',
+        self::SKSS_B8 => 'Biểu số: 8/BCH',
+        self::SKSS_THEM => 'xxx',
+        self::B11 => 'xxx',
+        self::DINH_DUONG => 'xxx',
+        self::HIV => 'xxx',
+    ];
+
     public static function getTitle($type){
         return self::toArray()[$type] ?? null;
+    }
+
+    public static function getTitle2($type){
+        return self::$titles[self::toArray()[$type]] ?? null;
     }
 }

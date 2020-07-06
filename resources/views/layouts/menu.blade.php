@@ -3,7 +3,10 @@
         <ul class="navbar-nav mr-auto">
             @if (\App\Enums\UserRole::isAdmin())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user.index') }}">Quản lý tài khoản</a>
+                    <a class="nav-link {{ url()->current() == route('user.index') ? 'active' : null }}"
+                       href="{{ route('user.index') }}">
+                        Quản lý tài khoản
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -12,7 +15,10 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach (\App\Enums\Types::toArray() as $type => $name)
-                            <a class="dropdown-item" href="/admin/{{ $type }}">{{ $name }}</a>
+                            <a class="dropdown-item {{ url()->current() == route('admin.report.index', ['type' => $type]) ? 'active' : null }}"
+                               href="{{ route('admin.report.index', ['type' => $type]) }}">
+                                {{ "$type - $name" }}
+                            </a>
                         @endforeach
                     </div>
                 </li>
@@ -26,7 +32,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach (\App\Enums\Types::toArray() as $type => $name)
-                            <a class="dropdown-item" href="/{{ $type }}">{{ $name }}</a>
+                            <a class="dropdown-item {{ url()->current() == route('report.index', ['type' => $type]) ? 'active' : null }}" href="{{ route('report.index', ['type' => $type]) }}">
+                                {{ "$type - $name" }}
+                            </a>
                         @endforeach
                     </div>
                 </li>

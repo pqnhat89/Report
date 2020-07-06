@@ -1,33 +1,53 @@
 <thead>
+@if (request()->export)
+    <tr>
+        <td colspan="18">
+            {{ \App\Enums\Types::getTitle2(request()->type) }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="18" style="text-align: center; font-weight: bold">
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="18" style="text-align: center">
+            Báo cáo {{ request()->month }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="18"></td>
+    </tr>
+@endif
 <tr>
-    <th rowspan="2">STT</th>
-    <th rowspan="2">Tên cơ sở</th>
-    <th colspan="2" style="text-align: center">Tổng số</th>
-    <th colspan="2" style="text-align: center">Băng huyết</th>
-    <th colspan="2" style="text-align: center">Sản giật</th>
-    <th colspan="2" style="text-align: center">Uốn ván sơ sinh</th>
-    <th colspan="2" style="text-align: center">Vỡ tử cung</th>
-    <th colspan="2" style="text-align: center">Nhiễm trùng sau đẻ</th>
-    <th colspan="2" style="text-align: center">Phá thai</th>
-    <th colspan="2" style="text-align: center">Khác</th>
+    <th style="text-align: center" rowspan="2">STT</th>
+    <th style="text-align: center" rowspan="2">Tên cơ sở</th>
+    <th style="text-align: center" colspan="2">Tổng số</th>
+    <th style="text-align: center" colspan="2">Băng huyết</th>
+    <th style="text-align: center" colspan="2">Sản giật</th>
+    <th style="text-align: center" colspan="2">Uốn ván sơ sinh</th>
+    <th style="text-align: center" colspan="2">Vỡ tử cung</th>
+    <th style="text-align: center" colspan="2">Nhiễm trùng sau đẻ</th>
+    <th style="text-align: center" colspan="2">Phá thai</th>
+    <th style="text-align: center" colspan="2">Khác</th>
 </tr>
 <tr>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
-    <th>Mắc</th>
-    <th>TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
+    <th style="text-align: center">Mắc</th>
+    <th style="text-align: center">TV</th>
 </tr>
 <tr>
     @for($i=1; $i<=18; $i++)
