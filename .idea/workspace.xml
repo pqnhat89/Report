@@ -21,13 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/Types.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Types.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exports/Export.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/Export.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +186,7 @@
       <workItem from="1593928942822" duration="313000" />
       <workItem from="1593965851926" duration="986000" />
       <workItem from="1593967292011" duration="4770000" />
-      <workItem from="1593987849670" duration="11359000" />
+      <workItem from="1593987849670" duration="17091000" />
     </task>
     <servers />
   </component>
@@ -276,20 +271,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="846" y="407" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593929230581" />
-    <state x="667" y="119" width="585" height="801" key="find.popup" timestamp="1593988738559">
+    <state x="667" y="119" width="587" height="801" key="find.popup" timestamp="1594006134702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593988738559" />
+    <state x="667" y="119" width="587" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594006134702" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593315546036" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1593917094137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593917094137" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593255873646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593999758529">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594005269911">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593999758529" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594005269911" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593334671624" />
   </component>
 </project>
