@@ -27,7 +27,7 @@
     <th style="text-align: center" rowspan="3">Số trẻ được tiêm Vitamin K1</th>
     <th style="text-align: center" rowspan="3">Số trẻ được sàng lọc sơ sinh</th>
     <th style="text-align: center" rowspan="3">Số trẻ sinh ra từ bà mẹ có HIV (+)</th>
-    <th style="text-align: center" rowspan="3">Số TV thai nhi từ 7 đến dưới 28 ngày)</th>
+    <th style="text-align: center" rowspan="3">Số TV thai nhi từ 7 đến {!! htmlspecialchars("<") !!}28 ngày)</th>
 </tr>
 <tr>
     <th style="text-align: center" rowspan="2">Tổng số</th>
@@ -40,8 +40,8 @@
     <th style="text-align: center">Số trẻ được chăm sóc EENC</th>
     <th style="text-align: center">Số trẻ đẻ non </th>
     <th style="text-align: center">Số trẻ đẻ bị ngạt </th>
-    <th style="text-align: center">Số dưới 2500 gram</th>
-    <th style="text-align: center">Số trên 4000 gram</th>
+    <th style="text-align: center">Số {!! htmlspecialchars("<") !!}2500 gram</th>
+    <th style="text-align: center">Số >4000 gram</th>
 </tr>
 <tr>
     @for($i=1; $i<=14; $i++)

@@ -1,4 +1,4 @@
-<table class="table table-bordered" style="width: 1500px!important">
+<table class="table table-bordered" style="width: 2000px!important">
     @component('report.'.request()->type.'.thead')@endcomponent
     <tbody>
     @if ($report ?? false)

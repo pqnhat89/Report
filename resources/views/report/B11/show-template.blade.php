@@ -1,4 +1,4 @@
-<table class="table table-bordered" style="width: 1500px!important">
+<table class="table table-bordered" style="width: 7000px!important;">
     @component('report.'.request()->type.'.thead')@endcomponent
     <tbody>
     @if ($report ?? false)
@@ -8,6 +8,28 @@
                 {{ $report->location }}
             </td>
             @for($i=0; $i<=19; $i++)
+                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
+                <td>
+                    {{ $report->$column }}
+                </td>
+            @endfor
+
+            <td style="text-align: center">I</td>
+            <td class="nowrap">
+                {{ $report->location }}
+            </td>
+            @for($i=20; $i<=39; $i++)
+                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
+                <td>
+                    {{ $report->$column }}
+                </td>
+            @endfor
+
+            <td style="text-align: center">I</td>
+            <td class="nowrap">
+                {{ $report->location }}
+            </td>
+            @for($i=40; $i<=63; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $report->$column }}

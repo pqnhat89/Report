@@ -30,7 +30,6 @@ class Export implements FromView, WithEvents
             'reports' => self::$reports
         ]);
     }
-
     public function registerEvents(): array
     {
         return [

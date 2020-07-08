@@ -25,7 +25,7 @@
     <th style="text-align: center" colspan="2">Tỷ lệ PN đẻ được tiêm phòng UV đủ liều</th>
     <th style="text-align: center" colspan="2">Tỷ lệ số PN đẻ con thứ 3 trở lên</th>
     <th style="text-align: center" rowspan="2">Số trẻ đẻ non CS PP KCM (Kangaroo)</th>
-    <th style="text-align: center" rowspan="2">Số tử vong tẻ em dưới 5 tuổi</th>
+    <th style="text-align: center" rowspan="2">Số tử vong trẻ em {!! htmlspecialchars("<") !!}5 tuổi</th>
     <th style="text-align: center" rowspan="2">Số trẻ bú mẹ giờ đầu</th>
     <th style="text-align: center" rowspan="2">Số bà mẹ nhỏ VGB được điều trị trong thòi gian mang thai</th>
     <th style="text-align: center" rowspan="2">Số trẻ bị VGB được tiêm phòng huyết thanh</th>

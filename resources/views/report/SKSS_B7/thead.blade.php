@@ -37,9 +37,9 @@
     <th style="text-align: center" colspan="2">Thuốc TT</th>
     <th style="text-align: center" colspan="2">Triệt sản</th>
     <th style="text-align: center" rowspan="2">Biện pháp khác</th>
-    <th style="text-align: center" rowspan="2">Số phá thai dưới 7 tuần</th>
-    <th style="text-align: center" rowspan="2">Số phá thai trên 7 - ≤12 tuần</th>
-    <th style="text-align: center" rowspan="2">Số phá thai trên 12 tuần</th>
+    <th style="text-align: center" rowspan="2">Số phá thai {!! htmlspecialchars("<") !!}7 tuần</th>
+    <th style="text-align: center" rowspan="2">Số phá thai >7 - ≤12 tuần</th>
+    <th style="text-align: center" rowspan="2">Số phá thai >12 tuần</th>
 </tr>
 <tr>
     <th style="text-align: center">Thuốc tiêm</th>

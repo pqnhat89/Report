@@ -10,7 +10,7 @@
         <form method="POST">
             {{ csrf_field() }}
             <div class="overflow-x">
-                <table class="table table-bordered" style="width: 1500px!important">
+                <table class="table table-bordered" style="width: 2000px!important">
                     @component('report.'.request()->type.'.thead')@endcomponent
                     <tbody>
                     <tr>

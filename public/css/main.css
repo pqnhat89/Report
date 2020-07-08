@@ -19,3 +19,7 @@ table thead th {
 .nowrap {
     white-space: nowrap;
 }
+
+table select.form-control {
+    min-width: 200px!important;
+}

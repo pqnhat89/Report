@@ -16,10 +16,10 @@
             {{ \App\Enums\Types::getTitle(request()->type) }}
         </td>
         <td colspan="22" style="text-align: center; font-weight: bold">
-            {{ \App\Enums\Types::getTitle(request()->type) }}
+            {{ \App\Enums\Types::getTitle(request()->type) }} (tiếp)
         </td>
         <td colspan="26" style="text-align: center; font-weight: bold">
-            {{ \App\Enums\Types::getTitle(request()->type) }}
+            {{ \App\Enums\Types::getTitle(request()->type) }} (tiếp)
         </td>
     </tr>
     <tr>
