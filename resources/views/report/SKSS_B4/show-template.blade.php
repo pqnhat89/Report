@@ -25,7 +25,7 @@
             <td></td>
             @for($i=0; $i<=17; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
+                <td style="font-weight: bold">
                     {{ $reports->sum($column) }}
                 </td>
             @endfor

@@ -21,7 +21,7 @@
             <td class="nowrap" style="text-align: center; font-weight: bold">TỔNG SỐ</td>
             @for($i=0; $i<=13; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
+                <td style="font-weight: bold">
                     {{ $reports->sum($column) }}
                 </td>
             @endfor

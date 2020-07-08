@@ -44,7 +44,7 @@ class AdminReportController extends Controller
 
         if ($request->export) {
             $report = $reports[0];
-            return Excel::download(new Export($reports), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
+            return Excel::download(new Export($reports, $request->type == 'B11'), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
         }
 
         return view(
@@ -61,7 +61,7 @@ class AdminReportController extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
+            return Excel::download(new Export($report, $request->type == 'B11'), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
         }
 
         return view(

@@ -35,7 +35,7 @@ class ReportController extends Controller
             ->first();
 
         if ($request->export) {
-            return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
+            return Excel::download(new Export($report, $request->type == 'B11'), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
         }
 
         return view(

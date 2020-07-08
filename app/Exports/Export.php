@@ -4,30 +4,23 @@ namespace App\Exports;
 
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
-use Maatwebsite\Excel\Sheet;
 
 class Export implements FromView, WithEvents
 {
     private static $report;
     private static $reports;
+    private static $multi;
 
-    public function __construct($report)
+    public function __construct($report, $multi = false)
     {
+        self::$multi = $multi;
         if (count($report) > 1) {
             self::$reports = $report;
         } else {
             self::$report = $report;
         }
-    }
-
-    public function register()
-    {
-        Sheet::macro('styleCells', function (Sheet $sheet, string $cellRange, array $style) {
-            $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style);
-        });
     }
 
     public function view(): View
@@ -50,10 +43,16 @@ class Export implements FromView, WithEvents
                     $column = \PHPExcel_Cell::stringFromColumnIndex($i);
                     $sheet->getColumnDimension($column)->setWidth(10);
                 }
-                $sheet->getColumnDimension('B')->setWidth(30);
+                if (self::$multi) {
+                    $sheet->getColumnDimension('B')->setWidth(20);
+                    $sheet->getColumnDimension('X')->setWidth(20);
+                    $sheet->getColumnDimension('AT')->setWidth(20);
+                } else {
+                    $sheet->getColumnDimension('B')->setWidth(30);
+                }
 
                 // set font
-                $sheet->getStyle('A1:AA100')
+                $sheet->getStyle('A1:BR50')
                     ->applyFromArray([
                         'font' => [
                             'name' => 'Times New Roman',
@@ -62,7 +61,7 @@ class Export implements FromView, WithEvents
                     ]);
 
                 // set wrap
-                $sheet->getStyle('A1:AA100')
+                $sheet->getStyle('A1:BR50')
                     ->getAlignment()
                     ->setVertical('center')
                     ->setWrapText(true);
