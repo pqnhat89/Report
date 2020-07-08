@@ -2,16 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\BaseBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
-use Tsyama\LaravelSoftDeleteFlag\Traits\SoftDeleteFlagTrait;
 
 class BaseModel extends Model
 {
-    // use SoftDeleteFlagTrait;
-
-    protected $guarded = [];
+    public $timestamps = true;
 
     const CREATED_AT = 'created_at';
     const CREATED_BY = 'created_by';
@@ -20,17 +16,6 @@ class BaseModel extends Model
     const UPDATED_BY = 'updated_by';
 
     const IS_DELETED = 'is_deleted';
-    const DELETED_AT = 'is_deleted';
-
-    public static function getTableName()
-    {
-        return (new static())->getTable();
-    }
-
-    public static function getPrimaryKeyName()
-    {
-        return (new static())->primaryKey;
-    }
 
     public function setCreateBy($user)
     {
@@ -63,12 +48,6 @@ class BaseModel extends Model
         }
     }
 
-    /**
-     * Create a new Eloquent query builder for the model.
-     *
-     * @param  \Illuminate\Database\Query\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder|static
-     */
     public function newEloquentBuilder($query)
     {
         return new BaseBuilder($query);

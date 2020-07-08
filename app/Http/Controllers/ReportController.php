@@ -29,6 +29,7 @@ class ReportController extends Controller
 
     public function show(Request $request)
     {
+
         $conditions = getConditions();
 
         $report = Reports::where($conditions)
@@ -66,6 +67,7 @@ class ReportController extends Controller
     {
         $inputs = $request->except('_token');
         $conditions = getConditions();
+        unset($conditions['month']);
         $year = now()->format('Y');
         if ($request->id) {
             // edit

@@ -14,7 +14,7 @@ class Types extends Enum
     const SKSS_THEM = "CHỈ TIÊU KHÁC";
 
     const B11 = "TÌNH HÌNH MẮC VÀ TỬ VONG BỆNH TRUYỀN NHIỄM GÂY DỊCH";
-    const DINH_DUONG = "BÁO CÁO HOẠT ĐỘNG CẢI THIỆN TÌNH TRẠNG DINH DƯỠNG TRẺ EM 2020";
+    const DINH_DUONG = "BÁO CÁO HOẠT ĐỘNG CẢI THIỆN TÌNH TRẠNG DINH DƯỠNG TRẺ EM";
     const HIV = "BÁO CÁO KẾT QUẢ SÀNG LỌC HIV";
 
     private static $titles = [
