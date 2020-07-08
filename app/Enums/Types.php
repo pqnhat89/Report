@@ -23,17 +23,25 @@ class Types extends Enum
         self::SKSS_B6 => 'Biểu số: 6/BCH',
         self::SKSS_B7 => 'Biểu số: 7/BCH',
         self::SKSS_B8 => 'Biểu số: 8/BCH',
-        self::SKSS_THEM => 'xxx',
-        self::B11 => 'xxx',
-        self::DINH_DUONG => 'xxx',
+        self::SKSS_THEM => 'Biểu số: 8/BCH',
+        self::B11 => 'Biểu: 11.XXX/BCH',
+        self::DINH_DUONG => '',
         self::HIV => 'xxx',
     ];
 
-    public static function getTitle($type){
+    public static function getTitle($type)
+    {
         return self::toArray()[$type] ?? null;
     }
 
-    public static function getTitle2($type){
-        return self::$titles[self::toArray()[$type]] ?? null;
+    private static $i = 1;
+
+    public static function getTitle2($type)
+    {
+        $title = self::$titles[self::toArray()[$type]] ?? null;
+        if (self::toArray()[$type] == self::B11) {
+            $title = str_replace('XXX', self::$i++, $title);
+        }
+        return $title;
     }
 }

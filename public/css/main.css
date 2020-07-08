@@ -3,8 +3,9 @@ table {
     font-weight: normal;
 }
 
-th {
+table thead th {
     text-align: center;
+    vertical-align: middle!important;
 }
 
 .navbar-nav .nav-item {

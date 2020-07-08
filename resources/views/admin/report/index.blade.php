@@ -25,7 +25,7 @@
                 <th>STT</th>
                 <th>Năm</th>
                 <th>Loại</th>
-                <th width="1" class="nowrap">Số Quận / Huyện đã gửi báo cáo</th>
+                <th width="1" class="nowrap">Số cơ sở đã gửi báo cáo</th>
                 <th width="1" class="nowrap">Tình trạng</th>
                 <th width="1"></th>
                 <th width="1"></th>

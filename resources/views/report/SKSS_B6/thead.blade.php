@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td colspan="16" style="text-align: center; font-weight: bold">
-            <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
+            {{ \App\Enums\Types::getTitle(request()->type) }}
         </td>
     </tr>
     <tr>

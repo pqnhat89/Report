@@ -64,6 +64,7 @@ class Export implements FromView, WithEvents
                 // set wrap
                 $sheet->getStyle('A1:AA100')
                     ->getAlignment()
+                    ->setVertical('center')
                     ->setWrapText(true);
             },
         ];

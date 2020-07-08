@@ -12,7 +12,7 @@ class UserRole extends Enum
 
     private static $title = [
         self::Admin => "Thành phố",
-        self::NormalUser => "Quận/Huyện"
+        self::NormalUser => "Cơ sở"
     ];
 
     public static function getTitle($key)

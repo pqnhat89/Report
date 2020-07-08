@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <p>Biểu số: 5/BCH</p>
+        <p>{{ \App\Enums\Types::getTitle2(request()->type) }}</p>
         <div class="text-center pb-5">
             <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
             <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>

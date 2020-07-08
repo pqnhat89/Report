@@ -20,7 +20,7 @@
             </select>
         </div>
         @if (\App\Enums\UserRole::isAdmin())
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label>Cơ sở</label>
                 <select class="form-control" name="location">
                     <option value="">Vui lòng chọn ...</option>
@@ -30,9 +30,19 @@
                     @endforeach
                 </select>
             </div>
+            <div class="form-group col-md-2">
+                <label>Trạng thái</label>
+                <select class="form-control" name="status">
+                    <option value="">Vui lòng chọn ...</option>
+                    @foreach(\App\Enums\Status::toArray() as $status)
+                        <option value="{{ $status }}" {{ request()->status == $status ? 'selected' : null }}>
+                            {!! \App\Enums\Status::getTitle($status) !!}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
         @endif
-        <div class="form-group col-md-3">
-            <label style="width: 100%">&nbsp;</label>
+        <div class="form-group col-md-12">
             <div class="nowrap">
                 <button type="submit" class="form-control btn btn-info" style="max-width: 100px">
                     Tìm kiếm

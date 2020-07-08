@@ -10,7 +10,7 @@
         <form method="POST">
             {{ csrf_field() }}
             <div class="overflow-x">
-                <table class="table table-bordered" style="width: 3000px!important">
+                <table class="table table-bordered" style="width: 1500px!important">
                     @component('report.'.request()->type.'.thead')@endcomponent
                     <tbody>
                     <tr>
@@ -20,7 +20,8 @@
                                 <select class="form-control" name="location" required>
                                     <option value="">Vui lòng chọn ...</option>
                                     @foreach(\App\Enums\Locations::toArray() as $location)
-                                        <option value="{{ $location }}" {{ ($report->location ?? null) == $location ? 'selected' : null }}>
+                                        <option
+                                            value="{{ $location }}" {{ ($report->location ?? null) == $location ? 'selected' : null }}>
                                             {{ $location }}
                                         </option>
                                     @endforeach
@@ -29,9 +30,7 @@
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
-                        @for($i=0; $i<=17; $i++)
+                        @for($i=0; $i<=10; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
