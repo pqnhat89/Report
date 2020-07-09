@@ -11,11 +11,9 @@ class Export implements FromView, WithEvents
 {
     private static $report;
     private static $reports;
-    private static $multi;
 
-    public function __construct($report, $multi = false)
+    public function __construct($report)
     {
-        self::$multi = $multi;
         if (count($report) > 1) {
             self::$reports = $report;
         } else {
@@ -30,6 +28,7 @@ class Export implements FromView, WithEvents
             'reports' => self::$reports
         ]);
     }
+
     public function registerEvents(): array
     {
         return [
@@ -42,10 +41,13 @@ class Export implements FromView, WithEvents
                     $column = \PHPExcel_Cell::stringFromColumnIndex($i);
                     $sheet->getColumnDimension($column)->setWidth(10);
                 }
-                if (self::$multi) {
+                if (request()->type == 'B11') {
                     $sheet->getColumnDimension('B')->setWidth(20);
                     $sheet->getColumnDimension('X')->setWidth(20);
                     $sheet->getColumnDimension('AT')->setWidth(20);
+                } elseif (request()->type == 'DINH_DUONG') {
+                    $sheet->getColumnDimension('B')->setWidth(65);
+                    $sheet->getRowDimension('1')->setRowHeight(40);
                 } else {
                     $sheet->getColumnDimension('B')->setWidth(30);
                 }

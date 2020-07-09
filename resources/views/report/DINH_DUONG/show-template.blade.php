@@ -21,12 +21,58 @@
             '14.2' => '* Tổng số bà mẹ được hỏi'
         ];
 @endphp
-<table class="table table-bordered">
+<table class="table table-bordered" style="width: 2000px!important;">
     <thead>
-    <th>STT</th>
-    <th>Chỉ số</th>
-    <th>Kết quả</th>
-    <th>Lũy tích</th>
+    @if (request()->export)
+        @if ($report ?? false)
+            <tr>
+                <td colspan="4" style="text-align: center; font-weight: bold">
+                    {!! \App\Enums\Types::getTitle(request()->type) !!} {{ mb_strtoupper($report->month) }}
+                    NĂM {{ $report->year }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+            </tr>
+        @endif
+        @if ($reports ?? false)
+            <tr>
+                <td colspan="18" style="text-align: center; font-weight: bold">
+                    {!! \App\Enums\Types::getTitle(request()->type) !!} {{ mb_strtoupper($reports[0]->month) }}
+                    NĂM {{ $reports[0]->year }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="18"></td>
+            </tr>
+        @endif
+    @endif
+    @if ($report ?? false)
+        <tr>
+            <th>STT</th>
+            <th>Chỉ số</th>
+            <th>Kết quả</th>
+            <th>Lũy tích</th>
+        </tr>
+    @endif
+    @if ($reports ?? false)
+        <tr>
+            <th rowspan="2">STT</th>
+            <th rowspan="2">Chỉ số</th>
+            @foreach(\App\Enums\Locations::$tuyenHuyen as $tuyenHuyen)
+                <th colspan="2" style="text-align: center">{{ $tuyenHuyen }}</th>
+            @endforeach
+            <th colspan="2" style="text-align: center">Tổng cộng</th>
+        </tr>
+        <tr>
+            @foreach(\App\Enums\Locations::$tuyenHuyen as $tuyenHuyen)
+                <th style="text-align: center">Kết quả</th>
+                <th style="text-align: center">Lũy tích</th>
+            @endforeach
+            <th style="font-weight: bold; text-align: center">Kết quả</th>
+            <th style="font-weight: bold; text-align: center">Lũy tích</th>
+        </tr>
+    @endif
     </thead>
     <tbody>
     @if ($report ?? false)
@@ -34,7 +80,7 @@
         @foreach($titles as $no => $title)
             <tr>
                 <td style="text-align: center">{{ $no }}</td>
-                <td>{{ $title }}</td>
+                <td style="{{ strpos($title, '*') !== false ? 'font-style: italic' : null }}">{{ $title }}</td>
                 <td>
                     @php $column=\PHPExcel_Cell::stringFromColumnIndex($i++); @endphp
                     {{ $report->$column }}
@@ -47,117 +93,27 @@
         @endforeach
     @endif
     @if ($reports ?? false)
-        <tr>
-            <td></td>
-            <td class="nowrap" style="text-align: center; font-weight: bold">TỔNG SỐ</td>
-            <td></td>
-            <td></td>
-            @for($i=0; $i<=17; $i++)
-                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td style="font-weight: bold">
-                    {{ $reports->sum($column) }}
-                </td>
-            @endfor
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold">A</td>
-            <td nowrap style="font-weight: bold">Y tế công</td>
-            <td></td>
-            <td></td>
-            <?php $reportsss = $reports->whereIn('location', array_merge(\App\Enums\Locations::$tuyenTinh, \App\Enums\Locations::$tuyenHuyen)) ?>
-            @for($i=0; $i<=17; $i++)
-                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
-                    {{ $reportsss->sum($column) }}
-                </td>
-            @endfor
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold">I</td>
-            <td nowrap style="font-weight: bold">Tuyến tỉnh</td>
-            <td></td>
-            <td></td>
-            <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuyenTinh) ?>
-            @for($i=0; $i<=17; $i++)
-                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
-                    {{ $reportsss->sum($column) }}
-                </td>
-            @endfor
-        </tr>
-        @php $no=1 @endphp
-        @foreach(\App\Enums\Locations::$tuyenTinh as $tuyenTinh)
+        @php $reports = $reports->whereIn('location', \App\Enums\Locations::$tuyenHuyen) @endphp
+        @php $i = -1 @endphp
+        @foreach($titles as $no => $title)
             <tr>
-                <td style="text-align: center">{{ $no++ }}</td>
-                <td nowrap style="color: red">{{ $tuyenTinh }}</td>
-                <td></td>
-                <td></td>
-                @php $report = $reports->where('location', $tuyenTinh) @endphp
-                @for($i=0; $i<=17; $i++)
-                    @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
+                <td style="text-align: center">{{ $no }}</td>
+                <td style="{{ strpos($title, '*') !== false ? 'font-style: italic' : null }}">{{ $title }}</td>
+                @foreach(\App\Enums\Locations::$tuyenHuyen as $tuyenHuyen)
+                    @php $report = $reports->where('location', $tuyenHuyen)->first() @endphp
                     <td>
-                        {{ $report->sum($column) }}
+                        @php $column1=\PHPExcel_Cell::stringFromColumnIndex($i+1); @endphp
+                        {{ $report->$column1 ?? 0 }}
                     </td>
-                @endfor
-            </tr>
-        @endforeach
-        <tr>
-            <td style="text-align: center; font-weight: bold">II</td>
-            <td nowrap style="font-weight: bold">Tuyến huyện</td>
-            <td></td>
-            <td></td>
-            <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuyenHuyen) ?>
-            @for($i=0; $i<=17; $i++)
-                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
-                    {{ $reportsss->sum($column) }}
-                </td>
-            @endfor
-        </tr>
-        @php $no=1 @endphp
-        @foreach(\App\Enums\Locations::$tuyenHuyen as $tuyenHuyen)
-            <tr>
-                <td style="text-align: center">{{ $no++ }}</td>
-                <td nowrap style="color: purple">{{ $tuyenHuyen }}</td>
-                <td></td>
-                <td></td>
-                @php $report = $reports->where('location', $tuyenHuyen) @endphp
-                @for($i=0; $i<=17; $i++)
-                    @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                     <td>
-                        {{ $report->sum($column) }}
+                        @php $column2=\PHPExcel_Cell::stringFromColumnIndex($i+2); @endphp
+                        {{ $report->$column2 ?? 0 }}
                     </td>
-                @endfor
+                @endforeach
+                <td style="font-weight: bold">{{ $reports->sum($column1) }}</td>
+                <td style="font-weight: bold">{{ $reports->sum($column2) }}</td>
             </tr>
-        @endforeach
-        <tr>
-            <td style="text-align: center; font-weight: bold">B</td>
-            <td nowrap style="font-weight: bold">Y tế tư nhân</td>
-            <td></td>
-            <td></td>
-            <?php $reportsss = $reports->whereIn('location', \App\Enums\Locations::$tuNhan) ?>
-            @for($i=0; $i<=17; $i++)
-                @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                <td>
-                    {{ $reportsss->sum($column) }}
-                </td>
-            @endfor
-        </tr>
-        @php $no=1 @endphp
-        @foreach(\App\Enums\Locations::$tuNhan as $tuNhan)
-            <tr>
-                <td style="text-align: center">{{ $no++ }}</td>
-                <td nowrap style="color: blue">{{ $tuNhan }}</td>
-                <td></td>
-                <td></td>
-                @php $report = $reports->where('location', $tuNhan) @endphp
-                @for($i=0; $i<=17; $i++)
-                    @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
-                    <td>
-                        {{ $report->sum($column) }}
-                    </td>
-                @endfor
-            </tr>
+            @php $i = $i+2 @endphp
         @endforeach
     @endif
     </tbody>
