@@ -13,10 +13,20 @@
             <label>Tháng</label>
             <select class="form-control" name="month">
                 <option value="">Vui lòng chọn ...</option>
-                @foreach(\App\Enums\Months::toArray() as $month)
-                    <option
-                        value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>{{ $month }}</option>
-                @endforeach
+                @if (in_array(request()->type,['HIV']))
+                    @for ($i=1;$i<=12;$i++)
+                        @php $month = "Tháng $i"; @endphp
+                        <option value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>
+                            {{ $month }}
+                        </option>
+                    @endfor
+                @else
+                    @foreach(\App\Enums\Months::toArray() as $month)
+                        <option value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>
+                            {{ $month }}
+                        </option>
+                    @endforeach
+                @endif
             </select>
         </div>
         @if (\App\Enums\UserRole::isAdmin())
