@@ -21,6 +21,10 @@ class AdminReportController extends Controller
     {
         $conditions = getConditions();
 
+        if ($request->status !== null) {
+            $conditions['status'] = $request->status;
+        }
+
         $reports = Reports::where($conditions)
             ->select(
                 'year',
@@ -108,14 +112,14 @@ class AdminReportController extends Controller
             );
         }
         return redirect()->route('report.index', ['type' => $request->type])
-            ->withErrors("<span class='text-success'>Lưu báo cáo thành công !!!</span>");
+            ->withErrors("<span class='text-success'>Lưu báo cáo thành công.</span>");
     }
 
     public function delete(Request $request, $id)
     {
         $conditions = getConditions();
         Reports::where($conditions)->delete();
-        return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công !!!</span>");
+        return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công.</span>");
     }
 
     public function lock(Request $request)
@@ -127,6 +131,6 @@ class AdminReportController extends Controller
                 'status' => $request->status
             ]);
 
-        return redirect()->back()->withErrors("<span class='text-success'>Cập nhật trạng thái thành công !!!</span>");
+        return redirect()->back()->withErrors("<span class='text-success'>Cập nhật trạng thái thành công.</span>");
     }
 }

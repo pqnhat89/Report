@@ -20,8 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Enums/FileNames.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/file/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/file/template.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Tai Nạn Lao Động_Nghị định 39.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Vệ Sinh Môi Trường.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Y Tế Lao Động_Phụ lục 9_Thông tư 19_2016.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Y Tế Trường Học.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo khoa Truyền Thông.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] KST-CT - BC năm.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] KST-CT - BC tháng.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a67b7db9-f38c-410f-8751-8eaaf145d79d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a67b7db9-f38c-410f-8751-8eaaf145d79d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Months.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Months.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Types.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Types.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/CommonHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/CommonHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSkssController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SkssB4Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/component/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/B11/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,17 +181,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/report" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/file" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Report\app\Http\Controllers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\Report\resources\views\report" />
-      <recent name="D:\Projects\Report\resources\views\report\SKSS_B4" />
-      <recent name="D:\Projects\Report\resources\views\admin\report" />
-      <recent name="D:\Projects\Report" />
-      <recent name="E:\Projects\Report" />
+      <recent name="D:\Projects\Report\resources\views\file" />
+      <recent name="D:\Projects\Report\app\Http\Controllers\Auth" />
+      <recent name="D:\Projects\Report\app\Models" />
+      <recent name="D:\Projects\Report\database\seeds" />
+      <recent name="D:\Projects\Report\storage\files" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,7 +230,8 @@
       <workItem from="1594168850284" duration="16272000" />
       <workItem from="1594267104835" duration="7804000" />
       <workItem from="1594345557887" duration="6769000" />
-      <workItem from="1594432002635" duration="2320000" />
+      <workItem from="1594432002635" duration="9478000" />
+      <workItem from="1594484098127" duration="13028000" />
     </task>
     <servers />
   </component>
@@ -254,10 +294,10 @@
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593967950969" />
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593230147735" />
-    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1593989226432">
+    <state x="754" y="243" key="NewPhpClassDialog" timestamp="1594435671354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593989226432" />
+    <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594435671354" />
     <state x="754" y="243" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593239643640" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1593969902440">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -284,20 +324,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594185840254" />
-    <state x="667" y="119" width="1112" height="801" key="find.popup" timestamp="1594271774344">
+    <state x="624" y="75" width="1112" height="801" key="find.popup" timestamp="1594499087010">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="667" y="119" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594271774344" />
+    <state x="624" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594499087010" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593315546036" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1593917094137">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1594498352058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593917094137" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594498352058" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593255873646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594434218883">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594499699054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594434218883" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594499699054" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593334671624" />
   </component>
 </project>

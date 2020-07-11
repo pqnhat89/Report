@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Types;
 use App\Enums\UserRole;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -9,7 +10,7 @@ function getConditions()
     $conditions = [];
 
     if (request()->type){
-        $conditions['type'] = \App\Enums\Types::getTitle(request()->type);
+        $conditions['type'] = Types::getTitle(request()->type) ?? \App\Enums\FileNames::getTitle(request()->type);
     }
 
     if (UserRole::isAdmin() && request()->location) {

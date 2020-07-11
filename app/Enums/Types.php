@@ -29,6 +29,16 @@ class Types extends Enum
         self::HIV => 'xxx',
     ];
 
+    public static function key()
+    {
+        return array_keys(self::toArray());
+    }
+
+    public static function value()
+    {
+        return self::toArray();
+    }
+
     public static function getTitle($type)
     {
         return self::toArray()[$type] ?? null;

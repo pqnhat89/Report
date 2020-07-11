@@ -46,7 +46,7 @@
                 <div class="col-sm">
                     <select class="form-control" name="month" required>
                         <option value="">Vui lòng chọn Quý ...</option>
-                        @foreach (\App\Enums\Months::toArray() as $month)
+                        @foreach (\App\Enums\Months::monthsOfYear() as $month)
                             <option
                                 value="{{ $month }}" {{ ($report->month ?? null) == $month ? 'selected' : null }}>{{ $month }}</option>
                         @endforeach

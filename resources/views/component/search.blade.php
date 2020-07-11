@@ -21,7 +21,7 @@
                         </option>
                     @endfor
                 @else
-                    @foreach(\App\Enums\Months::toArray() as $month)
+                    @foreach(\App\Enums\Months::monthsOfYear() as $month)
                         <option value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>
                             {{ $month }}
                         </option>
@@ -45,7 +45,7 @@
                 <select class="form-control" name="status">
                     <option value="">Vui lòng chọn ...</option>
                     @foreach(\App\Enums\Status::toArray() as $status)
-                        <option value="{{ $status }}" {{ request()->status == $status ? 'selected' : null }}>
+                        <option value="{{ $status }}" {{ request()->status === (string)$status ? 'selected' : null }}>
                             {!! \App\Enums\Status::getTitle($status) !!}
                         </option>
                     @endforeach

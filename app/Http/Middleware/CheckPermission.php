@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Enums\FileNames;
+use App\Enums\Types;
 use App\Enums\UserRole;
 use App\Models\Reports;
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CheckPermission
@@ -19,6 +20,13 @@ class CheckPermission
      */
     public function handle($request, Closure $next)
     {
+        // check type permission
+        if ($request->type) {
+            if (!in_array($request->type, array_merge(Types::key(), FileNames::key()))) {
+                return redirect(route('home'))->withErrors('Lỗi. Vui lòng thử lại !');
+            }
+        }
+
         $check = null;
         if ($request->isMethod('post') && $request->type) {
             if ($request->route()->getName() == 'report.delete') {
@@ -39,7 +47,6 @@ class CheckPermission
     {
         // init data
         $conditions = getConditions();
-        $conditions['year'] = now()->format('Y');
 
         // check permission
         if (UserRole::isAdmin()) {
@@ -47,11 +54,11 @@ class CheckPermission
         }
 
         // check exist
-        $data = DB::table('reports')
-            ->where($conditions)
+        $data = Reports::where($conditions)
             ->first();
+
         if ($data) {
-            return redirect()->back()->withErrors("Dữ liệu " . $conditions['month'] . " của " . $conditions['location'] . " trong năm " . $conditions['year'] . " đã tồn tại");
+            return redirect()->back()->withErrors("Dữ liệu " . $conditions['month'] . " của " . $conditions['location'] . " trong năm " . $conditions['year'] . " đã tồn tại.");
         }
     }
 
@@ -61,7 +68,6 @@ class CheckPermission
         $conditions = getConditions();
         $id = $conditions['id'];
         unset($conditions['id']);
-        $conditions['year'] = now()->format('Y');
 
         // check permission
         if (UserRole::isAdmin()) {
@@ -74,7 +80,7 @@ class CheckPermission
             ->first();
 
         if ($data) {
-            return redirect()->back()->withErrors("Dữ liệu " . $conditions['month'] . " của " . $conditions['location'] . " trong năm " . $conditions['year'] . " đã tồn tại");
+            return redirect()->back()->withErrors("Dữ liệu " . $conditions['month'] . " của " . $conditions['location'] . " trong năm " . $conditions['year'] . " đã tồn tại.");
         }
     }
 }

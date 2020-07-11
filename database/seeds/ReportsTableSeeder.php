@@ -2,6 +2,7 @@
 
 namespace Database\Seeds;
 
+use App\Enums\FileNames;
 use App\Enums\Types;
 use App\Enums\Months;
 use App\Enums\UserRole;
@@ -18,12 +19,10 @@ class ReportsTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = DB::table('users')
-            ->where('role', UserRole::NormalUser)
-            ->get();
         $locations = Locations::toArray();
-        $months = Months::toArray();
-        $types = Types::toArray();
+        $months = Months::monthsOfYear();
+        $types = array_merge(Types::toArray(), []);
+//        $types = array_merge(Types::toArray(), FileNames::toArray());
         $datas = [];
         foreach ($types as $type) {
             foreach ($locations as $location) {

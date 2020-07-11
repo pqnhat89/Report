@@ -3,9 +3,9 @@
         <ul class="navbar-nav mr-auto">
             @if (\App\Enums\UserRole::isAdmin())
                 <li class="nav-item">
-                    <a class="nav-link {{ url()->current() == route('user.index') ? 'active' : null }}"
-                       href="{{ route('user.index') }}">
-                        Quản lý tài khoản
+                    <a class="nav-link {{ url()->current() == route('file.index') ? 'active' : null }}"
+                       href="{{ route('file.index') }}">
+                        Tải mẫu
                     </a>
                 </li>
                 <li class="nav-item dropdown">

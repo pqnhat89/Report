@@ -43,7 +43,14 @@ Route::get('/home', 'HomeController@index')->name('home');
      });
  });
 
+Route::group(['prefix' => 'download'], function () {
+    Route::get('/', 'FileController@index')->name('file.index');
+});
+
 Route::group(['prefix' => '{type}'], function () {
+    Route::get('/template', 'FileController@template')->name('file.template');
+    Route::post('/upload', 'FileController@upload')->name('file.upload');
+
     Route::get('/', 'ReportController@index')->name('report.index');
     Route::get('/create', 'ReportController@create')->name('report.create');
     Route::post('/create', 'ReportController@save');

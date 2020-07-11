@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\FileNames;
 use App\Enums\Status;
 use App\Models\Reports;
 use App\Exports\Export;
 use Illuminate\Http\Request;
 use Excel;
+use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
@@ -19,12 +21,21 @@ class ReportController extends Controller
     {
         $conditions = getConditions();
 
+        if ($request->status !== null) {
+            $conditions['status'] = $request->status;
+        }
+
         $reports = Reports::where($conditions)
             ->orderBy('id', 'desc')
             ->paginate(50)
             ->appends($request->all());
 
-        return view('report.index', ['reports' => $reports]);
+        $view = "report.index";
+        if (in_array($request->type, FileNames::key())) {
+            $view = "file.index";
+        }
+
+        return view($view, ['reports' => $reports]);
     }
 
     public function show(Request $request)
@@ -34,6 +45,10 @@ class ReportController extends Controller
 
         $report = Reports::where($conditions)
             ->first();
+
+        if (in_array($request->type, FileNames::key())) {
+            return response()->download(storage_path($report->filepath));
+        }
 
         if ($request->export) {
             return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
@@ -85,15 +100,27 @@ class ReportController extends Controller
             );
         }
         return redirect()->route('report.index', ['type' => $request->type])
-            ->withErrors("<span class='text-success'>Lưu báo cáo thành công !!!</span>");
+            ->withErrors("<span class='text-success'>Lưu báo cáo thành công.</span>");
     }
 
     public function delete(Request $request, $id)
     {
         $conditions = getConditions();
-        Reports::where($conditions)
+
+        $report = Reports::where($conditions)
             ->where('status', Status::UNLOCK)
-            ->delete();
-        return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công !!!</span>");
+            ->first();
+
+        if ($report) {
+            // delete file
+            Storage::disk('storage')->delete($report->filepath);
+
+            // delete report
+            Reports::where($conditions)
+                ->where('status', Status::UNLOCK)
+                ->delete();
+        }
+
+        return redirect()->back()->withErrors("<span class='text-success'>Xóa báo cáo thành công.</span>");
     }
 }
