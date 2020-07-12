@@ -15,7 +15,8 @@
         "maatwebsite/excel": "^3.1",
         "myclabs/php-enum": "^1.5",
         "phpoffice/phpexcel": "^1.8",
-        "tsyama/laravel-soft-delete-flag": "^0.1.2"
+        "tsyama/laravel-soft-delete-flag": "^0.1.2",
+        "zanysoft/laravel-zip": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

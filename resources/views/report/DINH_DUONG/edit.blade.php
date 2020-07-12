@@ -31,22 +31,15 @@
                 <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ $report->year ?? now()->format('Y') }}</h1>
                 <div class="row pt-2">
                     <div class="col-md text-left">
-                        {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
+                        Cơ sở: {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                     </div>
                     <div class="col-md text-right">
                         <div class="row">
-                            <label class="col-form-label col-md-6">Tháng:</label>
                             <div class="col-md-6">
-                                <select class="form-control" name="month" required>
-                                    <option value="">Vui lòng chọn Tháng ...</option>
-                                    @for ($i=1; $i<=12; $i++)
-                                        @php $month = "Tháng $i"; @endphp
-                                        <option
-                                            value="{{ $month }}" {{ ($report->month ?? null) == $month ? 'selected' : null }}>
-                                            {{ $month }}
-                                        </option>
-                                    @endfor
-                                </select>
+                                @component('component.year',['report' => $report ?? false])@endcomponent
+                            </div>
+                            <div class="col-md-6">
+                                @component('component.month',['report' => $report ?? false])@endcomponent
                             </div>
                         </div>
                     </div>

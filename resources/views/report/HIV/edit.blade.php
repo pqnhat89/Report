@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center pb-5">
-            <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
-            <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
+            <?php $month = ($report ?? false) ? $report->month : (($reports ?? false) ? $reports[0]->month : null)  ?>
+            <?php $year = ($report ?? false) ? $report->year : (($reports ?? false) ? $reports[0]->year : null)  ?>
             <div class="row pb-5">
                 <div class="col-md-4 text-center">
                     <strong>SỞ Y TẾ THÀNH PHỐ ĐÀ NẴNG</strong><br>
@@ -20,7 +20,7 @@
                     <strong>Độc lập – Tự do – Hạnh phúc</strong>
                 </div>
             </div>
-            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} {{ $year }}</h1>
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
         </div>
         <form method="POST">
             {{ csrf_field() }}
@@ -58,15 +58,14 @@
             </div>
             <div class="row pt-3">
                 <div class="col-sm">
-                    <select class="form-control" name="month" required>
-                        <option value="">Vui lòng chọn Tháng ...</option>
-                        @for ($i=1;$i<=12;$i++)
-                            @php $month = "Tháng $i" @endphp
-                            <option value="{{ $month }}" {{ ($report->month ?? null) == $month ? 'selected' : null }}>
-                                {{ $month }}
-                            </option>
-                        @endfor
-                    </select>
+                    <div class="row">
+                        <div class="col-sm">
+                            @component('component.year',['report' => $report ?? false])@endcomponent
+                        </div>
+                        <div class="col-sm">
+                            @component('component.month',['report' => $report ?? false])@endcomponent
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm text-right">
                     <button type="submit" class="btn btn-primary">Lưu</button>

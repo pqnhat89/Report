@@ -21,7 +21,7 @@
             '14.2' => '* Tổng số bà mẹ được hỏi'
         ];
 @endphp
-<table class="table table-bordered" style="width: 2000px!important;">
+<table class="table table-bordered" style="min-width: 1000px!important;">
     <thead>
     @if (request()->export)
         @if ($report ?? false)
@@ -49,10 +49,10 @@
     @endif
     @if ($report ?? false)
         <tr>
-            <th>STT</th>
-            <th>Chỉ số</th>
-            <th>Kết quả</th>
-            <th>Lũy tích</th>
+            <th style="text-align: center">STT</th>
+            <th style="text-align: center">Chỉ số</th>
+            <th style="text-align: center">Kết quả</th>
+            <th style="text-align: center">Lũy tích</th>
         </tr>
     @endif
     @if ($reports ?? false)

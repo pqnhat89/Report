@@ -24,13 +24,13 @@
     </tr>
     <tr>
         <td colspan="22" style="text-align: center">
-            Báo cáo {{ request()->month }}
+            Báo cáo {{ request()->month }} năm {{request()->year}}
         </td>
         <td colspan="22" style="text-align: center">
-            Báo cáo {{ request()->month }}
+            Báo cáo {{ request()->month }} năm {{request()->year}}
         </td>
         <td colspan="26" style="text-align: center">
-            Báo cáo {{ request()->month }}
+            Báo cáo {{ request()->month }} năm {{request()->year}}
         </td>
     </tr>
     <tr>

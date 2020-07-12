@@ -22,7 +22,17 @@
         </td>
     </tr>
     <tr>
-        <td colspan="18"></td>
+        <td colspan="18">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="18" style="text-align: center; font-weight: bold">
+            {{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper(request()->month) }} NĂM {{ request()->year }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="18">
+        </td>
     </tr>
 @endif
 <tr>

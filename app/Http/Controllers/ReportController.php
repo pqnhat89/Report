@@ -51,6 +51,8 @@ class ReportController extends Controller
         }
 
         if ($request->export) {
+            $request->month = $report->month;
+            $request->year = $report->year;
             return Excel::download(new Export($report), "[" . $report->year . "][" . $report->month . "][" . $report->type . "][" . $report->location . "].xls");
         }
 
@@ -83,7 +85,7 @@ class ReportController extends Controller
         $inputs = $request->except('_token');
         $conditions = getConditions();
         unset($conditions['month']);
-        $year = now()->format('Y');
+        unset($conditions['year']);
         if ($request->id) {
             // edit
             Reports::where($conditions)
@@ -94,8 +96,7 @@ class ReportController extends Controller
             Reports::insert(
                 array_merge(
                     $inputs,
-                    $conditions,
-                    ['year' => $year]
+                    $conditions
                 )
             );
         }

@@ -101,36 +101,10 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="row">
-                                        <label class="col-form-label col-md-4 text-right">Tháng:</label>
-                                        <div class="col-md-8">
-                                            <select class="form-control" name="month" required>
-                                                <option value="">Vui lòng chọn Tháng ...</option>
-                                                @foreach(\App\Enums\Months::monthsOfYear() as $month)
-                                                    <option value="{{ $month }}">{{ $month }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                                    @component('component.year',['report' => $report ?? false])@endcomponent
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="row">
-                                        <label class="col-form-label col-md-4 text-right">Năm:</label>
-                                        <div class="col-md-8">
-                                            <select class="form-control" name="year" required>
-                                                <option value="">Vui lòng chọn Năm ...</option>
-                                                <option value="{{ now()->addYear(-1)->format('Y') }}">
-                                                    {{ now()->addYear(-1)->format('Y') }}
-                                                </option>
-                                                <option value="{{ now()->format('Y') }}">
-                                                    {{ now()->format('Y') }}
-                                                </option>
-                                                <option value="{{ now()->addYear(1)->format('Y') }}">
-                                                    {{ now()->addYear(1)->format('Y') }}
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    @component('component.month',['report' => $report ?? false])@endcomponent
                                 </div>
                                 @if(\App\Enums\UserRole::isAdmin())
                                     <div class="col-md-6 pt-3">

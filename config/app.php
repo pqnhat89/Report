@@ -136,6 +136,7 @@ return [
 
     'providers' => [
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        ZanySoft\Zip\ZipServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -191,6 +192,7 @@ return [
 
     'aliases' => [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Zip' => ZanySoft\Zip\ZipFacade::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,

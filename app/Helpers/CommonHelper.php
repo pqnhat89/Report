@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\FileNames;
 use App\Enums\Types;
 use App\Enums\UserRole;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +10,7 @@ function getConditions()
 {
     $conditions = [];
 
-    if (request()->type){
+    if (request()->type) {
         $conditions['type'] = Types::getTitle(request()->type) ?? \App\Enums\FileNames::getTitle(request()->type);
     }
 
@@ -34,12 +35,7 @@ function getConditions()
     return $conditions;
 }
 
-function getSumColumns()
+function isDownloadFile()
 {
-    $columns = [];
-    for ($i = 0; $i <= 100; $i++) {
-        $column = \PHPExcel_Cell::stringFromColumnIndex($i);
-        $columns[] = DB::raw("SUM($column) as $column");
-    }
-    return $columns;
+    return in_array(request()->type, FileNames::key());
 }

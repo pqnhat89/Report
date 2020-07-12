@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
-    'App\\Enums\\Files' => $baseDir . '/app/Enums/Files.php',
+    'App\\Enums\\FileNames' => $baseDir . '/app/Enums/FileNames.php',
     'App\\Enums\\Locations' => $baseDir . '/app/Enums/Locations.php',
     'App\\Enums\\Months' => $baseDir . '/app/Enums/Months.php',
     'App\\Enums\\Status' => $baseDir . '/app/Enums/Status.php',
@@ -174,7 +174,6 @@ return array(
     'Cron\\MinutesField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
-    'Database\\Seeds\\FilesTableSeeder' => $baseDir . '/database/seeds/FilesTableSeeder.php',
     'Database\\Seeds\\ReportsTableSeeder' => $baseDir . '/database/seeds/ReportsTableSeeder.php',
     'Database\\Seeds\\UsersTableSeeder' => $baseDir . '/database/seeds/UsersTableSeeder.php',
     'DebugBar\\Bridge\\CacheCacheCollector' => $vendorDir . '/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php',
@@ -4348,6 +4347,10 @@ return array(
     'Whoops\\Util\\SystemFacade' => $vendorDir . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
     'XdgBaseDir\\Xdg' => $vendorDir . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+    'ZanySoft\\Zip\\Zip' => $vendorDir . '/zanysoft/laravel-zip/src/Zip.php',
+    'ZanySoft\\Zip\\ZipFacade' => $vendorDir . '/zanysoft/laravel-zip/src/ZipFacade.php',
+    'ZanySoft\\Zip\\ZipManager' => $vendorDir . '/zanysoft/laravel-zip/src/ZipManager.php',
+    'ZanySoft\\Zip\\ZipServiceProvider' => $vendorDir . '/zanysoft/laravel-zip/src/ZipServiceProvider.php',
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

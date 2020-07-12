@@ -89,15 +89,16 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row pt-5">
+            <div class="row pt-3">
                 <div class="col-sm">
-                    <select class="form-control" name="month" required>
-                        <option value="">Vui lòng chọn Quý ...</option>
-                        @foreach (\App\Enums\Months::monthsOfYear() as $month)
-                            <option
-                                value="{{ $month }}" {{ ($report->month ?? null) == $month ? 'selected' : null }}>{{ $month }}</option>
-                        @endforeach
-                    </select>
+                    <div class="row">
+                        <div class="col-sm">
+                            @component('component.year',['report' => $report ?? false])@endcomponent
+                        </div>
+                        <div class="col-sm">
+                            @component('component.month',['report' => $report ?? false])@endcomponent
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm text-right">
                     <button type="submit" class="btn btn-primary">Lưu</button>

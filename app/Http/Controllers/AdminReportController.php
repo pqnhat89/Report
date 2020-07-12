@@ -3,12 +3,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Exports\Export;
 use App\Models\Reports;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Excel;
+use Zip;
 
 class AdminReportController extends Controller
 {
@@ -43,6 +43,17 @@ class AdminReportController extends Controller
     public function sum(Request $request)
     {
         $conditions = getConditions();
+
+        if (isDownloadFile()) {
+            $year = $conditions['year'];
+            $month = $conditions['month'];
+            $type = $conditions['type'];
+            $zip = Zip::create("[$year][$month]$type.zip");
+            $zip->add("storage/files/$year/$month/$type");
+            $zip->close();
+            return response()->download("[$year][$month]$type.zip")->deleteFileAfterSend(true);
+        }
+
 
         $reports = Reports::where($conditions)->get();
 

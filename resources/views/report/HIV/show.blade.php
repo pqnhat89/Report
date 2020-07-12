@@ -20,7 +20,7 @@
                     <strong>Độc lập – Tự do – Hạnh phúc</strong>
                 </div>
             </div>
-            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} {{ $year }}</h1>
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
         </div>
         <form method="POST">
             {{ csrf_field() }}

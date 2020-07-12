@@ -20,44 +20,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Enums/FileNames.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/file/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/file/template.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Tai Nạn Lao Động_Nghị định 39.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Vệ Sinh Môi Trường.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Y Tế Lao Động_Phụ lục 9_Thông tư 19_2016.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo Y Tế Trường Học.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] Báo cáo khoa Truyền Thông.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] KST-CT - BC năm.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/files/[Tải mẫu] KST-CT - BC tháng.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a67b7db9-f38c-410f-8751-8eaaf145d79d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a67b7db9-f38c-410f-8751-8eaaf145d79d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Report.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Report.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Enums/Months.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Months.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/Types.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Types.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Helpers/CommonHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/CommonHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminSkssController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SkssB4Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_01_014729_create_reports_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ReportsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/report/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/component/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/file/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/file/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/B11/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +165,7 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/tsyama/laravel-soft-delete-flag" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/zanysoft/laravel-zip" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dsuWfWPbF0AjAN7zdpLwNtMZJD" />
@@ -181,20 +182,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/file" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/component" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\Report\app\Http\Controllers" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Report\resources\views\component" />
+      <recent name="D:\Projects\Report\app\Enums" />
       <recent name="D:\Projects\Report\resources\views\file" />
       <recent name="D:\Projects\Report\app\Http\Controllers\Auth" />
       <recent name="D:\Projects\Report\app\Models" />
-      <recent name="D:\Projects\Report\database\seeds" />
-      <recent name="D:\Projects\Report\storage\files" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Report\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,6 +233,7 @@
       <workItem from="1594345557887" duration="6769000" />
       <workItem from="1594432002635" duration="9478000" />
       <workItem from="1594484098127" duration="13028000" />
+      <workItem from="1594506773952" duration="8147000" />
     </task>
     <servers />
   </component>
@@ -334,10 +336,10 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594498352058" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593255873646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594499699054">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594513437519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594499699054" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594513437519" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593334671624" />
   </component>
 </project>

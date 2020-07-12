@@ -90,6 +90,10 @@ class ComposerStaticInit03d45d9a8b23d256bd3855cbe00713c2
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'Z' => 
+        array (
+            'ZanySoft\\Zip\\' => 13,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -216,6 +220,10 @@ class ComposerStaticInit03d45d9a8b23d256bd3855cbe00713c2
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'ZanySoft\\Zip\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zanysoft/laravel-zip/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -498,7 +506,7 @@ class ComposerStaticInit03d45d9a8b23d256bd3855cbe00713c2
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Enums\\Files' => __DIR__ . '/../..' . '/app/Enums/Files.php',
+        'App\\Enums\\FileNames' => __DIR__ . '/../..' . '/app/Enums/FileNames.php',
         'App\\Enums\\Locations' => __DIR__ . '/../..' . '/app/Enums/Locations.php',
         'App\\Enums\\Months' => __DIR__ . '/../..' . '/app/Enums/Months.php',
         'App\\Enums\\Status' => __DIR__ . '/../..' . '/app/Enums/Status.php',
@@ -665,7 +673,6 @@ class ComposerStaticInit03d45d9a8b23d256bd3855cbe00713c2
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
-        'Database\\Seeds\\FilesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/FilesTableSeeder.php',
         'Database\\Seeds\\ReportsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ReportsTableSeeder.php',
         'Database\\Seeds\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'DebugBar\\Bridge\\CacheCacheCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php',
@@ -4839,6 +4846,10 @@ class ComposerStaticInit03d45d9a8b23d256bd3855cbe00713c2
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'ZanySoft\\Zip\\Zip' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/Zip.php',
+        'ZanySoft\\Zip\\ZipFacade' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipFacade.php',
+        'ZanySoft\\Zip\\ZipManager' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipManager.php',
+        'ZanySoft\\Zip\\ZipServiceProvider' => __DIR__ . '/..' . '/zanysoft/laravel-zip/src/ZipServiceProvider.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

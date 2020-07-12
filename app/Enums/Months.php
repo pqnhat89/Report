@@ -19,4 +19,17 @@ class Months extends Enum
         }
         return $months;
     }
+
+    public static function getHtml()
+    {
+        $html = "<div class='text-center'>Tháng</div>";
+        $html .= "<select class='form-control' name='month' required>";
+        $html .= "<option value=''>Vui lòng chọn Tháng ...</option>";
+        foreach (self::monthsOfYear() as $month) {
+            $selected = request()->month == $month ? 'selected' : null;
+            $html .= "<option value='$month' $selected>$month</option>";
+        }
+        $html .= "</select>";
+        return $html;
+    }
 }
