@@ -20,6 +20,17 @@ class Months extends Enum
         return $months;
     }
 
+    public static function quartersOfYear()
+    {
+        $months = [];
+        for ($i = 1; $i <= 12; $i++) {
+            if ($i % 3 == 0) {
+                $months[] = "Tháng $i";
+            }
+        }
+        return $months;
+    }
+
     public static function getHtml()
     {
         $html = "<div class='text-center'>Tháng</div>";

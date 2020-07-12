@@ -17,15 +17,7 @@
                         <td class="text-center">I</td>
                         <td class="text-center nowrap">
                             @if (\App\Enums\UserRole::isAdmin())
-                                <select class="form-control" name="location" required>
-                                    <option value="">Vui lòng chọn ...</option>
-                                    @foreach(\App\Enums\Locations::toArray() as $location)
-                                        <option
-                                            value="{{ $location }}" {{ ($report->location ?? null) == $location ? 'selected' : null }}>
-                                            {{ $location }}
-                                        </option>
-                                    @endforeach
-                                </select>
+                                @component('component.location', ['report' => $report ?? null])@endcomponent
                             @else
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif

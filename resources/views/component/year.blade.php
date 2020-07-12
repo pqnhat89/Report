@@ -4,7 +4,7 @@
         @php $isRequired = null  @endphp
     @endif
 @endif
-<div class="text-center">Năm</div>
+<label class="text-center">Năm</label>
 <select class="form-control" name="year" {{ $isRequired }}>
     <option value=''>Vui lòng chọn Năm ...</option>
     @php $currentYears = now()->format('Y') @endphp

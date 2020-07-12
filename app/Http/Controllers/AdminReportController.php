@@ -54,12 +54,11 @@ class AdminReportController extends Controller
             return response()->download("[$year][$month]$type.zip")->deleteFileAfterSend(true);
         }
 
-
         $reports = Reports::where($conditions)->get();
 
         if ($request->export) {
             $report = $reports[0];
-            return Excel::download(new Export($reports), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
+            return Excel::download(new Export($reports, true), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
         }
 
         return view(

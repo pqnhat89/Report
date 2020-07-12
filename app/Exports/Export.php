@@ -12,9 +12,9 @@ class Export implements FromView, WithEvents
     private static $report;
     private static $reports;
 
-    public function __construct($report)
+    public function __construct($report, $sum = false)
     {
-        if (count($report) > 1) {
+        if ($sum) {
             self::$reports = $report;
         } else {
             self::$report = $report;

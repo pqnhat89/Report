@@ -10,35 +10,11 @@
                    placeholder="vd: {{ now()->format('Y') }}">
         </div>
         <div class="form-group col-md">
-            <label>Tháng</label>
-            <select class="form-control" name="month">
-                <option value="">Vui lòng chọn ...</option>
-                @if (in_array(request()->type,['HIV']))
-                    @for ($i=1;$i<=12;$i++)
-                        @php $month = "Tháng $i"; @endphp
-                        <option value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>
-                            {{ $month }}
-                        </option>
-                    @endfor
-                @else
-                    @foreach(\App\Enums\Months::monthsOfYear() as $month)
-                        <option value="{{ $month }}" {{ request()->month == $month ? 'selected' : null }}>
-                            {{ $month }}
-                        </option>
-                    @endforeach
-                @endif
-            </select>
+            @component('component.month')@endcomponent
         </div>
         @if (\App\Enums\UserRole::isAdmin())
             <div class="form-group col-md">
-                <label>Cơ sở</label>
-                <select class="form-control" name="location">
-                    <option value="">Vui lòng chọn ...</option>
-                    @foreach(\App\Enums\Locations::toArray() as $location)
-                        <option
-                            value="{{ $location }}" {{ request()->location == $location ? 'selected' : null }}>{{ $location }}</option>
-                    @endforeach
-                </select>
+                @component('component.location')@endcomponent
             </div>
         @endif
         <div class="form-group col-md">

@@ -5,17 +5,14 @@
         <div class="text-center pb-5">
             <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
             <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
-            <h1>{{ str_replace('XXX', $year, \App\Enums\Types::getTitle(request()->type)) }} {{ $year }}</h1>
-            <div class="row pt-2">
-                <div class="col-md text-center">
-                    @if ($report ?? false)
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
+            @if ($report ?? false)
+                <div class="pt-3">
+                    <strong>
                         Quận / Huyện: {{ $report->location }}
-                    @endif
+                    </strong>
                 </div>
-                <div class="col-md text-center">
-                    Tháng: {{ $month }}
-                </div>
-            </div>
+            @endif
         </div>
         <form method="POST">
             {{ csrf_field() }}

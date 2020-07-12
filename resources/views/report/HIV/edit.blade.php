@@ -20,7 +20,7 @@
                     <strong>Độc lập – Tự do – Hạnh phúc</strong>
                 </div>
             </div>
-            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
+            <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
         </div>
         <form method="POST">
             {{ csrf_field() }}
@@ -67,8 +67,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm text-right">
-                    <button type="submit" class="btn btn-primary">Lưu</button>
+                <div class="col-sm">
+                    <div class="row">
+                        <div class="col-sm">
+                            @if (\App\Enums\UserRole::isAdmin())
+                                @component('component.location',['report' => $report ?? false])@endcomponent
+                            @endif
+                        </div>
+                        <div class="col-sm text-right">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

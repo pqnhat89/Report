@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\FileNames;
 use App\Enums\Status;
+use App\Enums\UserRole;
 use App\Models\Reports;
 use App\Exports\Export;
 use Illuminate\Http\Request;
@@ -88,6 +89,9 @@ class ReportController extends Controller
         unset($conditions['year']);
         if ($request->id) {
             // edit
+            if (UserRole::isAdmin()) {
+                unset($conditions['location']);
+            }
             Reports::where($conditions)
                 ->where('status', Status::UNLOCK)
                 ->update($inputs);
@@ -104,7 +108,7 @@ class ReportController extends Controller
             ->withErrors("<span class='text-success'>Lưu báo cáo thành công.</span>");
     }
 
-    public function delete(Request $request, $id)
+    public function delete()
     {
         $conditions = getConditions();
 

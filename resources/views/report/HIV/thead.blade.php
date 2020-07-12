@@ -50,10 +50,8 @@
     <th style="text-align: center" colspan="2">{!! htmlspecialchars('25-49') !!}</th>
     <th style="text-align: center" colspan="2">{!! htmlspecialchars('>49') !!}</th>
     <th style="text-align: center" colspan="2">{!! htmlspecialchars('Không rõ') !!}</th>
-    <th style="text-align: center">Nam</th>
-    <th style="text-align: center"></th>
-    <th style="text-align: center">Nữ</th>
-    <th style="text-align: center"></th>
+    <th style="text-align: center" colspan="2">Nam</th>
+    <th style="text-align: center" colspan="2">Nữ</th>
     @if (!in_array(request()->route()->getName(), ['report.create', 'report.edit']))
         <th></th>
         <th></th>

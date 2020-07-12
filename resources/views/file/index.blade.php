@@ -108,17 +108,7 @@
                                 </div>
                                 @if(\App\Enums\UserRole::isAdmin())
                                     <div class="col-md-6 pt-3">
-                                        <div class="row">
-                                            <label class="col-form-label col-md-4 text-right">Cơ sở:</label>
-                                            <div class="col-md-8">
-                                                <select class="form-control" name="location" required>
-                                                    <option value="">Vui lòng chọn Cơ sở ...</option>
-                                                    @foreach(\App\Enums\Locations::toArray() as $location)
-                                                        <option value="{{ $location }}">{{ $location }}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                        </div>
+                                        @component('component.location')@endcomponent
                                     </div>
                                 @endif
                             </div>

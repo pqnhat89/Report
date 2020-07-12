@@ -31,16 +31,20 @@
                 <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ $report->year ?? now()->format('Y') }}</h1>
                 <div class="row pt-2">
                     <div class="col-md text-left">
-                        Cơ sở: {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                     </div>
                     <div class="col-md text-right">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md">
                                 @component('component.year',['report' => $report ?? false])@endcomponent
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md">
                                 @component('component.month',['report' => $report ?? false])@endcomponent
                             </div>
+                            @if(\App\Enums\UserRole::isAdmin())
+                                <div class="col-md">
+                                    @component('component.location',['report' => $report ?? false])@endcomponent
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
