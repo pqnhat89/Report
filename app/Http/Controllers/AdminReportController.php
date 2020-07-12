@@ -44,17 +44,19 @@ class AdminReportController extends Controller
     {
         $conditions = getConditions();
 
+        $reports = Reports::where($conditions)->get();
+
         if (isDownloadFile()) {
             $year = $conditions['year'];
             $month = $conditions['month'];
             $type = $conditions['type'];
             $zip = Zip::create("[$year][$month]$type.zip");
-            $zip->add("storage/files/$year/$month/$type");
+            foreach ($reports as $report) {
+                $zip->add("storage/" . $report->filepath);
+            }
             $zip->close();
             return response()->download("[$year][$month]$type.zip")->deleteFileAfterSend(true);
         }
-
-        $reports = Reports::where($conditions)->get();
 
         if ($request->export) {
             $report = $reports[0];

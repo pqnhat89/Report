@@ -52,4 +52,12 @@ class Locations extends Enum
         self::BV_BINHDAN,
         self::BV_VINMEC
     ];
+
+    public static function count()
+    {
+        if (in_array(request()->type, ['B11', 'DINH_DUONG', 'HIV'])) {
+            return count(self::$tuyenHuyen);
+        }
+        return count(self::toArray());
+    }
 }
