@@ -9,8 +9,11 @@
         @component('component.search')
         @endcomponent
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md">
+                <a class="btn btn-primary" href="{{ route('report.create', ['type' => request()->type]) }}">
+                    Tạo mới
+                </a>
             </div>
             <div class="col-md">
                 <div class="float-right">

@@ -15,35 +15,55 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = [
+        $admins = [
             'pqnhat89@gmail.com',
             'danang@gmail.com',
+        ];
+
+        $users = [
+            'phusan@gmail.com',
+            'bvdanang@gmail.com',
+            'ttksbt@gmail.com',
+            'bvphunu@gmail.com',
+
             'haichau@gmail.com',
-            'camle@gmail.com',
             'thanhkhe@gmail.com',
+            'sontra@gmail.com',
             'lienchieu@gmail.com',
             'nguhanhson@gmail.com',
-            'sontra@gmail.com',
+            'camle@gmail.com',
             'hoavang@gmail.com',
-            'hoangsa@gmail.com'
+
+            'bvhoanmy@gmail.com',
+            'bvgiadinh@gmail.com',
+            'bvtamtri@gmail.com',
+            'bvbinhdan@gmail.com',
+            'bvvinmec@gmail.com'
         ];
-        $locations = Locations::toArray();
-
         $data = [];
-        $i = 0;
-
-        foreach ($locations as $location) {
-            if ($i < count($users)) {
-                $data[] = [
-                    'name' => $users[$i],
-                    'email' => $users[$i],
-                    'password' => bcrypt('123'),
-                    'role' => $i > 1 ? 0 : 1,
-                    'location' => $location,
-                ];
-                $i = $i + 1;
-            }
+        foreach ($admins as $k => $admin) {
+            $data[] = [
+                'name' => $admin,
+                'email' => $admin,
+                'password' => bcrypt('123'),
+                'role' => 1,
+                'location' => null,
+            ];
         }
+
+        $locations = Locations::toArray();
+        $i = 0;
+        foreach ($locations as $locations) {
+            $data[] = [
+                'name' => $users[$i],
+                'email' => $users[$i],
+                'password' => bcrypt('123'),
+                'role' => 0,
+                'location' => $locations,
+            ];
+            $i++;
+        }
+
         DB::table('users')->insert($data);
     }
 }
