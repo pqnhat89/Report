@@ -104,7 +104,12 @@ class ReportController extends Controller
                 )
             );
         }
-        return redirect()->route('report.index', ['type' => $request->type])
+
+        $routeName = 'report.index';
+        if (UserRole::isAdmin()) {
+            $routeName = 'admin.report.index';
+        }
+        return redirect()->route($routeName, ['type' => $request->type])
             ->withErrors("<span class='text-success'>Lưu báo cáo thành công.</span>");
     }
 
