@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Laravel-HTMLMin
+         */
+        'HTMLMin' => HTMLMin\HTMLMin\Facades\HTMLMin::class,
+
     ],
 
     /*

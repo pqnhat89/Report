@@ -32,6 +32,21 @@
                             </td>
                         @endfor
                     </tr>
+                    <tr>
+                        <td class="text-center">I.1</td>
+                        <td class="text-center nowrap">
+                            Trong đó, nội tỉnh
+                        </td>
+                        <td></td>
+                        <td></td>
+                        @for($i=18; $i<=35; $i++)
+                            @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
+                            <td>
+                                <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
+                                       type="number" required>
+                            </td>
+                        @endfor
+                    </tr>
                     </tbody>
                 </table>
             </div>
