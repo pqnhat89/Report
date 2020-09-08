@@ -9,7 +9,7 @@
     @endif
 @endif
 <label class="text-center">Tháng</label>
-<select class="form-control" name="month" {{ $isRequired }}>
+<select class="form-control" name="month">
     <option value=''>Vui lòng chọn Tháng ...</option>
     @foreach($months as $month)
         @php $selected = request()->month == $month ? 'selected' : null @endphp
