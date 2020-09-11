@@ -66,7 +66,7 @@
                                     Quận/Huyện:</label>
 
                                 <div class="col-md-6">
-                                    @component('component.location', ['report' => $user ?? false])@endcomponent
+                                    @component('component.location', ['report' => $user ?? false, 'required' => 'false'])@endcomponent
                                 </div>
                             </div>
 

@@ -20,23 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckDepartment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Enums/UserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/UserRole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckPermission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/location.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/location.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/month.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/month.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/file/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/file/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/files/2015/Tháng 1/Báo cáo Tai Nạn Lao Động_Nghị định 39.doc/[2015][Tháng 1][Hải Châu]Báo cáo Tai Nạn Lao Động_Nghị định 39.doc" beforeDir="false" afterPath="$PROJECT_DIR$/storage/files/2015/Tháng 1/Báo cáo Tai Nạn Lao Động_Nghị định 39.doc/[2015][Tháng 1][Hải Châu]Báo cáo Tai Nạn Lao Động_Nghị định 39.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,10 +301,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594185840254" />
-    <state x="624" y="75" width="1112" height="801" key="find.popup" timestamp="1599790704682">
+    <state x="624" y="75" width="1112" height="801" key="find.popup" timestamp="1599791296003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599790704682" />
+    <state x="624" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599791296003" />
     <state x="2544" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1594579322320" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593315546036" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1594498352058">

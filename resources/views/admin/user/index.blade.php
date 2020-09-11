@@ -42,10 +42,10 @@
                                 {{ $user->location }}
                                 @break
                                 @case(\App\Enums\UserRole::Admin)
-                                <strong>THÀNH PHỐ (quản trị)</strong>
+                                <strong>{{ \App\Enums\UserRole::getTitle(\App\Enums\UserRole::Admin) }}</strong>
                                 @break
                                 @case(\App\Enums\UserRole::Department)
-                                {{ \App\Enums\UserRole::getTitle(\App\Enums\UserRole::Department) }}
+                                <strong>{{ \App\Enums\UserRole::getTitle(\App\Enums\UserRole::Department) }}</strong>
                                 @break
                                 @default
                                 <i>Đang chờ xét duyệt</i>

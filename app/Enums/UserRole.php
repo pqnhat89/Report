@@ -12,9 +12,9 @@ class UserRole extends Enum
     const Department = 2;
 
     private static $title = [
-        self::Admin => "Thành phố",
-        self::NormalUser => "Cơ sở",
-        self::Department => "Phòng ban",
+        self::Admin => "ADMIN (quản trị)",
+        self::NormalUser => "CƠ SỞ",
+        self::Department => "PHÒNG BAN",
     ];
 
     public static function getTitle($key)
