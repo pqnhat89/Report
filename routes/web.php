@@ -26,22 +26,24 @@ Route::post('/password/change', 'ChangePasswordController@change');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
- Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
-     // for user
-     Route::get('/users', 'UserController@index')->name('user.index');
-     Route::get('/users/{email}/create', 'UserController@edit')->name('user.create');
-     Route::post('/users/{email}/create', 'UserController@save');
-     Route::get('/users/{email}/edit', 'UserController@edit')->name('user.edit');
-     Route::post('/users/{email}/edit', 'UserController@save');
-     Route::post('/users/{email}/delete', 'UserController@delete')->name('user.delete');
+Route::group(['prefix' => 'admin', 'middleware' => 'department'], function () {
+    // for user
+    Route::group(['middleware' => 'admin'], function () {
+        Route::get('/users', 'UserController@index')->name('user.index');
+        Route::get('/users/{email}/create', 'UserController@edit')->name('user.create');
+        Route::post('/users/{email}/create', 'UserController@save');
+        Route::get('/users/{email}/edit', 'UserController@edit')->name('user.edit');
+        Route::post('/users/{email}/edit', 'UserController@save');
+        Route::post('/users/{email}/delete', 'UserController@delete')->name('user.delete');
+    });
 
-     // for reports
-     Route::group(['prefix' => '{type}'], function () {
-         Route::get('/', 'AdminReportController@index')->name('admin.report.index');
-         Route::post('/lock', 'AdminReportController@lock')->name('admin.report.lock');
-         Route::get('/{year}/{month}', 'AdminReportController@sum')->name('admin.report.sum');
-     });
- });
+    // for reports
+    Route::group(['prefix' => '{type}'], function () {
+        Route::get('/', 'AdminReportController@index')->name('admin.report.index');
+        Route::post('/lock', 'AdminReportController@lock')->name('admin.report.lock');
+        Route::get('/{year}/{month}', 'AdminReportController@sum')->name('admin.report.sum');
+    });
+});
 
 Route::group(['prefix' => 'download'], function () {
     Route::get('/', 'FileController@index')->name('file.index');

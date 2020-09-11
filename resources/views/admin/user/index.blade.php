@@ -44,6 +44,9 @@
                                 @case(\App\Enums\UserRole::Admin)
                                 <strong>THÀNH PHỐ (quản trị)</strong>
                                 @break
+                                @case(\App\Enums\UserRole::Department)
+                                {{ \App\Enums\UserRole::getTitle(\App\Enums\UserRole::Department) }}
+                                @break
                                 @default
                                 <i>Đang chờ xét duyệt</i>
                             @endswitch

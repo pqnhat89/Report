@@ -10,11 +10,11 @@
                    placeholder="vd: {{ now()->format('Y') }}">
         </div>
         <div class="form-group col-md">
-            @component('component.month')@endcomponent
+            @component('component.month', ['required' => 'false'])@endcomponent
         </div>
         @if (\App\Enums\UserRole::isAdmin())
             <div class="form-group col-md">
-                @component('component.location')@endcomponent
+                @component('component.location', ['required' => 'false'])@endcomponent
             </div>
         @endif
         <div class="form-group col-md">

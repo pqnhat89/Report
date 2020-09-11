@@ -49,7 +49,7 @@ class CheckPermission
         $conditions = getConditions();
 
         // check permission
-        if (UserRole::isAdmin()) {
+        if (UserRole::isAdmin() || UserRole::isDepartment()) {
             $conditions['location'] = $request->location;
         }
 

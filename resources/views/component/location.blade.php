@@ -4,7 +4,7 @@
 @endif
 @php $isRequired = 'required'  @endphp
 @if ($required ?? false)
-    @if($required == false)
+    @if($required == 'false')
         @php $isRequired = null  @endphp
     @endif
 @endif

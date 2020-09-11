@@ -4,12 +4,12 @@
 @endif
 @php $isRequired = 'required'  @endphp
 @if ($required ?? false)
-    @if($required == false)
+    @if($required == 'false')
         @php $isRequired = null  @endphp
     @endif
 @endif
 <label class="text-center">Tháng</label>
-<select class="form-control" name="month">
+<select class="form-control" name="month" {{ $isRequired }}>
     <option value=''>Vui lòng chọn Tháng ...</option>
     @foreach($months as $month)
         @php $selected = request()->month == $month ? 'selected' : null @endphp

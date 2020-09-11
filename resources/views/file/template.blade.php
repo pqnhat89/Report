@@ -18,7 +18,7 @@
                         @if (\App\Enums\UserRole::isNormalUser())
                             <a class="btn btn-info" href="{{ route('report.index', ['type' => $type]) }}">Chi tiết</a>
                         @endif
-                        @if (\App\Enums\UserRole::isAdmin())
+                        @if (\App\Enums\UserRole::isAdmin() || \App\Enums\UserRole::isDepartment())
                             <a class="btn btn-info" href="{{ route('admin.report.index', ['type' => $type]) }}">
                                 Tổng hợp
                             </a>

@@ -9,10 +9,12 @@ class UserRole extends Enum
 {
     const Admin = 1;
     const NormalUser = 0;
+    const Department = 2;
 
     private static $title = [
         self::Admin => "Thành phố",
-        self::NormalUser => "Cơ sở"
+        self::NormalUser => "Cơ sở",
+        self::Department => "Phòng ban",
     ];
 
     public static function getTitle($key)
@@ -28,6 +30,11 @@ class UserRole extends Enum
     public static function isNormalUser()
     {
         return Auth::user()->role == self::NormalUser;
+    }
+
+    public static function isDepartment()
+    {
+        return Auth::user()->role == self::Department;
     }
 
 }
