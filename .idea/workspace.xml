@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template-custom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template-custom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show-template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enums/Months.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/Months.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/component/month.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/month.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +212,7 @@
       <workItem from="1600686321770" duration="582000" />
       <workItem from="1600687153511" duration="312000" />
       <workItem from="1600687530144" duration="51000" />
-      <workItem from="1600687625264" duration="86000" />
+      <workItem from="1600687625264" duration="297000" />
     </task>
     <servers />
   </component>

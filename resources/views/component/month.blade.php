@@ -11,11 +11,11 @@
 <label class="text-center">Tháng</label>
 <select class="form-control" name="month" {{ $isRequired }}>
     <option value=''>Vui lòng chọn Tháng ...</option>
-    @foreach($months as $month)
+    @foreach($months as $month => $name)
         @php $selected = request()->month == $month ? 'selected' : null @endphp
         @if ($report ?? false)
             @php $selected = $report->month == $month ? 'selected' : null @endphp
         @endif
-        <option value="{{ $month }}" {{ $selected }}>{{ $month }}</option>
+        <option value="{{ $month }}" {{ $selected }}>{{ $name }}</option>
     @endforeach
 </select>
