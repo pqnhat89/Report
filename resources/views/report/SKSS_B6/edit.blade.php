@@ -25,7 +25,7 @@
                         @for($i=0; $i<=13; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
-                                <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
+                                <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? 0 }}"
                                        type="number" required>
                             </td>
                         @endfor
@@ -38,7 +38,7 @@
                         @for($i=14; $i<=27; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
-                                <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
+                                <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? 0 }}"
                                        type="number" required>
                             </td>
                         @endfor

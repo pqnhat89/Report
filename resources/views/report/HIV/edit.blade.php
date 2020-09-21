@@ -47,7 +47,7 @@
                                 <td>
                                     @php $column=\PHPExcel_Cell::stringFromColumnIndex($i++); @endphp
                                     <input class="form-control" name="{{ $column }}"
-                                           value="{{ $report->$column ?? null }}"
+                                           value="{{ $report->$column ?? 0 }}"
                                            type="number" required>
                                 </td>
                             @endfor
