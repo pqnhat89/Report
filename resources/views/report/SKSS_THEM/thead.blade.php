@@ -29,8 +29,10 @@
     <th style="text-align: center" rowspan="2">Số trẻ bú mẹ giờ đầu</th>
     <th style="text-align: center" rowspan="2">Số bà mẹ nhỏ VGB được điều trị trong thòi gian mang thai</th>
     <th style="text-align: center" rowspan="2">Số trẻ bị VGB được tiêm phòng huyết thanh</th>
-    <th style="text-align: center" rowspan="2">Tồng số PN đẻ tại địa bàn (số quản lý)</th>
-    <th style="text-align: center" rowspan="2">Tồng số PN đẻ tại địa bàn (số thực hiện)</th>
+    @if (\App\Enums\UserRole::isQuanHuyen())
+        <th style="text-align: center" rowspan="2">Tồng số PN đẻ tại địa bàn (số quản lý)</th>
+        <th style="text-align: center" rowspan="2">Tồng số PN đẻ tại địa bàn (số thực hiện)</th>
+    @endif
 </tr>
 <tr>
     <th style="text-align: center">Tổng số</th>
@@ -39,7 +41,8 @@
     <th style="text-align: center">Tỷ lệ</th>
 </tr>
 <tr>
-    @for($i=1; $i<=13; $i++)
+    @php $n = \App\Enums\UserRole::isQuanHuyen() ? 0 : -2; @endphp
+    @for($i=1; $i<=13+$n; $i++)
         <td style="text-align: center"><i>{{ $i }}</i></td>
     @endfor
 </tr>

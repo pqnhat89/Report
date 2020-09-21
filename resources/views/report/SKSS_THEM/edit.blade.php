@@ -22,7 +22,8 @@
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif
                         </td>
-                        @for($i=0; $i<=10; $i++)
+                        @php $n = \App\Enums\UserRole::isQuanHuyen() ? 0 : -2; @endphp
+                        @for($i=0; $i<=10+$n; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? 0 }}"
@@ -35,7 +36,7 @@
                         <td class="text-center nowrap">
                             Trong đó, nội tỉnh
                         </td>
-                        @for($i=11; $i<=21; $i++)
+                        @for($i=11+$n; $i<=21+$n*2; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? 0 }}"

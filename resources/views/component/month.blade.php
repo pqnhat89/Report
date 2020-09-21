@@ -1,5 +1,5 @@
 @php $months = \App\Enums\Months::monthsOfYear() @endphp
-@if (in_array(request()->type, ['SKSS_B4', 'SKSS_B5', 'SKSS_B6', 'SKSS_B7', 'SKSS_B8', 'B11']))
+@if (in_array(request()->type, ['SKSS_B4', 'SKSS_B5', 'SKSS_B6', 'SKSS_B7', 'SKSS_B8', 'SKSS_THEM', 'B11']))
     @php $months = \App\Enums\Months::quartersOfYear() @endphp
 @endif
 @php $isRequired = 'required'  @endphp

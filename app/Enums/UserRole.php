@@ -37,4 +37,9 @@ class UserRole extends Enum
         return Auth::user()->role == self::Department;
     }
 
+    public static function isQuanHuyen()
+    {
+        return self::isAdmin() || self::isDepartment() || (self::isNormalUser() && in_array(Auth::user()->location, Locations::$tuyenHuyen));
+    }
+
 }
