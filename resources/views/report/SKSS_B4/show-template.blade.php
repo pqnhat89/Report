@@ -7,9 +7,7 @@
             <td style="text-align: center" class="nowrap">
                 {{ $report->location }}
             </td>
-            <td></td>
-            <td></td>
-            @for($i=0; $i<=17; $i++)
+            @for($i=0; $i<=19; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $report->$column }}
@@ -21,9 +19,7 @@
             <td style="text-align: center" class="nowrap">
                 Trong đó, nội tỉnh
             </td>
-            <td></td>
-            <td></td>
-            @for($i=18; $i<=35; $i++)
+            @for($i=20; $i<=39; $i++)
                 @php $column=\PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                 <td>
                     {{ $report->$column }}
@@ -35,8 +31,8 @@
 @endif
 
 @if ($reports ?? false)
-    @component('report.'.request()->type.'.show-template-custom', ['reports' => $reports, 'from' => 0, 'to' => 17])@endcomponent
+    @component('report.'.request()->type.'.show-template-custom', ['reports' => $reports, 'from' => 0, 'to' => 19])@endcomponent
     <br>
     <h3>Trong đó, nội tỉnh</h3>
-    @component('report.'.request()->type.'.show-template-custom', ['reports' => $reports, 'from' => 18, 'to' => 35])@endcomponent
+    @component('report.'.request()->type.'.show-template-custom', ['reports' => $reports, 'from' => 20, 'to' => 39])@endcomponent
 @endif

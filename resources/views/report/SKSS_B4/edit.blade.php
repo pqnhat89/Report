@@ -22,9 +22,7 @@
                                 {{ $report->location ?? \Illuminate\Support\Facades\Auth::user()->location }}
                             @endif
                         </td>
-                        <td></td>
-                        <td></td>
-                        @for($i=0; $i<=17; $i++)
+                        @for($i=0; $i<=19; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
@@ -37,9 +35,7 @@
                         <td class="text-center nowrap">
                             Trong đó, nội tỉnh
                         </td>
-                        <td></td>
-                        <td></td>
-                        @for($i=18; $i<=35; $i++)
+                        @for($i=20; $i<=39; $i++)
                             @php $column = \PHPExcel_Cell::stringFromColumnIndex($i); @endphp
                             <td>
                                 <input class="form-control" name="{{ $column }}" value="{{ $report->$column ?? null }}"
