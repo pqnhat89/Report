@@ -38,8 +38,8 @@
                 </td>
             @endfor
             @if (!in_array(request()->route()->getName(), ['report.create', 'report.edit']))
-                <th style="font-weight: bold">{{ $a }}</th>
-                <th style="font-weight: bold">{{ $b }}</th>
+                <th style="font-weight: bold">{{ $a ? $a/2 : 0 }}</th>
+                <th style="font-weight: bold">{{ $b ? $b/2 : 0 }}</th>
             @endif
         </tr>
     @endforeach
@@ -69,8 +69,8 @@
                     @php $b+= $i%2 ? $sum : 0 @endphp
                 </td>
             @endfor
-            <td style="font-weight: bold">{{ $a }}</td>
-            <td style="font-weight: bold">{{ $b }}</td>
+            <td style="font-weight: bold">{{ $a ? $a/2 : 0 }}</td>
+            <td style="font-weight: bold">{{ $b ? $b/2 : 0 }}</td>
         </tr>
     @endif
     </tbody>

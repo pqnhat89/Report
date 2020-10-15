@@ -41,7 +41,14 @@
                     <tr>
                         <td>{{ $no + 1 }}</td>
                         <td>{{ $report->year }}</td>
-                        <td nowrap>{{  $report->month }}</td>
+                        <td nowrap>
+                            @if (in_array(request()->type, ['SKSS_B4', 'SKSS_B5', 'SKSS_B6', 'SKSS_B7', 'SKSS_B8', 'SKSS_THEM', 'B11']))
+                                @php $monthArr = explode(' ', trim($report->month)) ?? [] @endphp
+                                {{ ($monthArr[1] ?? null).' '.($monthArr[0] ?? null) }}
+                            @else
+                                {{  $report->month }}
+                            @endif
+                        </td>
                         <td class="text-{{ $report->count == \App\Enums\Locations::count() ? 'success' : 'danger' }}">
                             <strong>{{ $report->count }}/{{ \App\Enums\Locations::count() }}</strong>
                         </td>
