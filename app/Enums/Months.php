@@ -25,7 +25,7 @@ class Months extends Enum
         $months = [];
         for ($i = 1; $i <= 12; $i++) {
             if ($i % 3 == 0) {
-                $months["Tháng $i"] = "$i Tháng";
+                $months["$i tháng"] = "$i tháng";
             }
         }
         return $months;
