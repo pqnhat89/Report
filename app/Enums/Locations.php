@@ -2,6 +2,8 @@
 
 namespace App\Enums;
 
+use App\User;
+use App\Enums\Types;
 use MyCLabs\Enum\Enum;
 
 class Locations extends Enum
@@ -59,5 +61,19 @@ class Locations extends Enum
             return count(self::$tuyenHuyen);
         }
         return count(self::toArray());
+    }
+
+    public static function toArray()
+    {
+        if (in_array(request()->type, Types::keys())) {
+            return parent::toArray();
+        } else {
+            return User::whereNotNull('location')
+                ->select('location')
+                ->orderBy('location')
+                ->get()
+                ->pluck('location')
+                ->toArray();
+        }
     }
 }

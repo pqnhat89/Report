@@ -44,8 +44,8 @@
                         <td nowrap>
                             {{  $report->month }}
                         </td>
-                        <td class="text-{{ $report->count == \App\Enums\Locations::count() ? 'success' : 'danger' }}">
-                            <strong>{{ $report->count }}/{{ \App\Enums\Locations::count() }}</strong>
+                        <td class="text-danger">
+                            <strong>{{ $report->count }}</strong>
                         </td>
                         <td class="nowrap">{!! \App\Enums\Status::getTitle($report->status) !!}</td>
                         <td nowrap>

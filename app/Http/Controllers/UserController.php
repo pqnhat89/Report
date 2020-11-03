@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Locations;
 use App\Enums\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -71,6 +72,7 @@ class UserController extends Controller
                     'email' => $request->email,
                     'password' => bcrypt($request->new_password),
                     'role' => $request->role,
+                    'location' => in_array($request->location, Locations::toArray()) ? $request->location : $request->name
                 ]);
             return redirect()
                 ->route('user.index')
