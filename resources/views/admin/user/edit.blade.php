@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Thay đổi mật khẩu</div>
+                    <div class="card-header">Thêm / Sửa tài khoản</div>
 
                     <div class="card-body">
                         <form method="POST">
