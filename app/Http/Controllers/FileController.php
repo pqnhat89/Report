@@ -28,7 +28,6 @@ class FileController extends Controller
 
     public function download($id)
     {
-        dd(getConditions());
         $filename = FileNames::toArray()[$type];
         return response()->download(storage_path("files/{$filename}"));
     }

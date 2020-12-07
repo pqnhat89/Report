@@ -21,6 +21,7 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
 ]);
 
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/password/change', 'ChangePasswordController@index')->name('password.change');
 Route::post('/password/change', 'ChangePasswordController@change');
 
