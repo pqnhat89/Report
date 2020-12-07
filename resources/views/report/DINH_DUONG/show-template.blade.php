@@ -93,7 +93,7 @@
         @endforeach
     @endif
     @if ($reports ?? false)
-        @php $reports = $reports->whereIn('location', \App\Enums\Locations::$tuyenHuyen) @endphp
+        @php $reports = $reports @endphp
         @php $i = -1 @endphp
         @foreach($titles as $no => $title)
             <tr>

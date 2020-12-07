@@ -7,7 +7,7 @@
             'Người hiến máu',
             'Các đối tượng khác (ghi rõ)'
         ];
-    $reports = ($reports ?? false) ? $reports->whereIn('location', \App\Enums\Locations::$tuyenHuyen) : null;
+    $reports = ($reports ?? false) ? $reports : null;
 @endphp
 <table class="table table-bordered">
     @component('report.'.request()->type.'.thead', [
