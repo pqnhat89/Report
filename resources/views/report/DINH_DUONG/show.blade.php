@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center pb-5">
-            <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
-            <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
+            <?php $month = request()->month ?? (($report ?? false) ? $report->month : $reports[0]->month)  ?>
+            <?php $year = request()->year ?? (($report ?? false) ? $report->year : $reports[0]->year)  ?>
             <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
             @if ($report ?? false)
                 <div class="pt-3">

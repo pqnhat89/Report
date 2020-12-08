@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center pb-5">
-            <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
-            <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
+            <?php $month = request()->month ?? (($report ?? false) ? $report->month : $reports[0]->month)  ?>
+            <?php $year = request()->year ?? (($report ?? false) ? $report->year : $reports[0]->year)  ?>
             <div class="row pb-5">
                 <div class="col-md-4 text-center">
                     <strong>SỞ Y TẾ THÀNH PHỐ ĐÀ NẴNG</strong><br>

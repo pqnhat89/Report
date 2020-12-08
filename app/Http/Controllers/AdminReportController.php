@@ -42,9 +42,13 @@ class AdminReportController extends Controller
 
     public function sum(Request $request)
     {
-        $conditions = getConditions();
+        $conditions = $newConditions = getConditions();
+        unset($newConditions['month']);
+        $month = trim(str_replace(['Tháng', 'tháng'], ['', ''], $conditions['month']));
 
-        $reports = Reports::where($conditions)->get();
+        $reports = Reports::where($newConditions)
+            ->whereRaw("TRIM(REPLACE(`month`, 'tháng', '')) <= $month")
+            ->get();
 
         if (isDownloadFile()) {
             $year = $conditions['year'];
@@ -60,7 +64,7 @@ class AdminReportController extends Controller
 
         if ($request->export) {
             $report = $reports[0];
-            return Excel::download(new Export($reports, true), "[" . $report->year . "][" . $report->month . "][" . $report->type . "].xls");
+            return Excel::download(new Export($reports, true), "[" . $conditions['year'] . "][" . $conditions['month'] . "][" . $conditions['type'] . "].xls");
         }
 
         return view(

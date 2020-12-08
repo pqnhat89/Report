@@ -5,8 +5,8 @@
         <p>Biểu: 11/BCH</p>
         <div class="text-center pb-5">
             <h1>{{ \App\Enums\Types::getTitle(request()->type) }}</h1>
-            <?php $month = ($report ?? false) ? $report->month : $reports[0]->month  ?>
-            <?php $year = ($report ?? false) ? $report->year : $reports[0]->year  ?>
+            <?php $month = request()->month ?? (($report ?? false) ? $report->month : $reports[0]->month)  ?>
+            <?php $year = request()->year ?? (($report ?? false) ? $report->year : $reports[0]->year)  ?>
             <h4>Báo cáo {{ $month }} năm {{ $year }}</h4>
         </div>
         <form method="POST">
