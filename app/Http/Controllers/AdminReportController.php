@@ -68,7 +68,7 @@ class AdminReportController extends Controller
                 ->get();
         } else {
             $reports = Reports::where($newConditions)
-                ->whereRaw("TRIM(REPLACE(`month`, 'tháng', '')) <= ?", $month)
+                ->whereRaw("TRIM(REPLACE(`month`, 'tháng', '')) <= ?", (int)$month)
                 ->get();
         }
 

@@ -20,30 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/component/fromto.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/month.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/month.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/component/year.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/year.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/B11/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
