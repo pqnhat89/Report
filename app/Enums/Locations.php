@@ -65,15 +65,15 @@ class Locations extends Enum
 
     public static function toArray()
     {
-        if (in_array(request()->type, Types::keys())) {
-            return parent::toArray();
-        } else {
+//        if (in_array(request()->type, Types::keys())) {
+//            return parent::toArray();
+//        } else {
             return User::whereNotNull('location')
                 ->select('location')
                 ->orderBy('location')
                 ->get()
                 ->pluck('location')
                 ->toArray();
-        }
+//        }
     }
 }

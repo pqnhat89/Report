@@ -1,7 +1,7 @@
 @php $locations = \App\Enums\Locations::toArray() @endphp
-@if (in_array(request()->type, ['B11', 'DINH_DUONG', 'HIV']))
-    @php $locations = \App\Enums\Locations::$tuyenHuyen @endphp
-@endif
+{{--@if (in_array(request()->type, ['B11', 'DINH_DUONG', 'HIV']))--}}
+{{--    @php $locations = \App\Enums\Locations::$tuyenHuyen @endphp--}}
+{{--@endif--}}
 @php $isRequired = 'required'  @endphp
 @if ($required ?? false)
     @if($required == 'false')

@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /storage/files
+/.idea/*
 .env
 .env.backup
 .phpunit.result.cache
