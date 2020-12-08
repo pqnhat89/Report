@@ -40,15 +40,37 @@ class AdminReportController extends Controller
         return view('admin.report.index', ['reports' => $reports]);
     }
 
+    private static function parseMonthToInt($month)
+    {
+        return trim(str_replace(['Tháng', 'tháng'], ['', ''], $month));
+    }
+
+    private static function parseDateToInt($month, $year)
+    {
+        return (int)($year . str_pad(self::parseMonthToInt($month), 2, 0, STR_PAD_LEFT));
+    }
+
     public function sum(Request $request)
     {
+        // check inrange
+        $inRange = $request->frommonth && $request->fromyear && $request->tomonth && $request->toyear;
+
+        // get conditions
         $conditions = $newConditions = getConditions();
         unset($newConditions['month']);
-        $month = trim(str_replace(['Tháng', 'tháng'], ['', ''], $conditions['month']));
+        $month = self::parseMonthToInt($conditions['month']);
 
-        $reports = Reports::where($newConditions)
-            ->whereRaw("TRIM(REPLACE(`month`, 'tháng', '')) <= $month")
-            ->get();
+        if ($inRange) {
+            unset($newConditions['year']);
+            $reports = Reports::where('type', $newConditions)
+                ->whereRaw("CONCAT(`year`, LPAD(TRIM(REPLACE(REPLACE(`month`, 'tháng', ''), 'Tháng', '')), 2, 0)) >= ?", self::parseDateToInt($request->frommonth, $request->fromyear))
+                ->whereRaw("CONCAT(`year`, LPAD(TRIM(REPLACE(REPLACE(`month`, 'tháng', ''), 'Tháng', '')), 2, 0)) <= ?", self::parseDateToInt($request->tomonth, $request->toyear))
+                ->get();
+        } else {
+            $reports = Reports::where($newConditions)
+                ->whereRaw("TRIM(REPLACE(`month`, 'tháng', '')) <= ?", $month)
+                ->get();
+        }
 
         if (isDownloadFile()) {
             $year = $conditions['year'];
@@ -63,8 +85,11 @@ class AdminReportController extends Controller
         }
 
         if ($request->export) {
-            $report = $reports[0];
-            return Excel::download(new Export($reports, true), "[" . $conditions['year'] . "][" . $conditions['month'] . "][" . $conditions['type'] . "].xls");
+            if ($inRange) {
+                return Excel::download(new Export($reports, true), "[Từ " . self::parseMonthToInt($request->frommonth) . "-" . $request->fromyear . " đến " . self::parseMonthToInt($request->tomonth) . "-" . $request->toyear . "][" . $conditions['type'] . "].xls");
+            } else {
+                return Excel::download(new Export($reports, true), "[" . $conditions['year'] . "][" . $conditions['month'] . "][" . $conditions['type'] . "].xls");
+            }
         }
 
         return view(

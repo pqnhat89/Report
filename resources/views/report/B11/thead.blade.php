@@ -24,13 +24,28 @@
     </tr>
     <tr>
         <td colspan="22" style="text-align: center">
-            Báo cáo {{ request()->month }} năm {{request()->year}}
+            @php $inRange = request()->frommonth && request()->fromyear && request()->tomonth && request()->toyear @endphp
+            @if ($inRange)
+                Báo cáo từ {{ mb_strtolower(request()->frommonth) }} năm {{ request()->fromyear }} đến {{ mb_strtolower(request()->tomonth) }} năm {{ request()->toyear }}
+            @else
+                Báo cáo {{ request()->month }} năm {{ request()->year }}
+            @endif
         </td>
         <td colspan="22" style="text-align: center">
-            Báo cáo {{ request()->month }} năm {{request()->year}}
+            @php $inRange = request()->frommonth && request()->fromyear && request()->tomonth && request()->toyear @endphp
+            @if ($inRange)
+                Báo cáo từ {{ mb_strtolower(request()->frommonth) }} năm {{ request()->fromyear }} đến {{ mb_strtolower(request()->tomonth) }} năm {{ request()->toyear }}
+            @else
+                Báo cáo {{ request()->month }} năm {{ request()->year }}
+            @endif
         </td>
         <td colspan="26" style="text-align: center">
-            Báo cáo {{ request()->month }} năm {{request()->year}}
+            @php $inRange = request()->frommonth && request()->fromyear && request()->tomonth && request()->toyear @endphp
+            @if ($inRange)
+                Báo cáo từ {{ mb_strtolower(request()->frommonth) }} năm {{ request()->fromyear }} đến {{ mb_strtolower(request()->tomonth) }} năm {{ request()->toyear }}
+            @else
+                Báo cáo {{ request()->month }} năm {{ request()->year }}
+            @endif
         </td>
     </tr>
     <tr>

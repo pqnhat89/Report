@@ -20,17 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4030a5f-517e-4e7e-a3c6-f3efc5ea6e12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/component/fromto.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/component/month.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/month.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/component/year.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/component/year.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/B11/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/B11/thead.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show-template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/DINH_DUONG/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/HIV/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B4/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B5/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B6/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B7/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_B8/thead.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/report/SKSS_THEM/thead.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,20 +171,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/component" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\Report\app\Http\Controllers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\Report\resources\views\component" />
       <recent name="D:\Projects\Report\app\Http\Middleware" />
       <recent name="D:\Projects\Report\resources\views\report\SKSS_THEM" />
       <recent name="D:\Projects\Report\resources\views\report\SKSS_B8" />
       <recent name="D:\Projects\Report\resources\views\report\SKSS_B7" />
-      <recent name="D:\Projects\Report\resources\views\report\SKSS_B6" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projects\Report\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -245,6 +258,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600687670274" />
+    <state width="1293" height="404" key="GridCell.Tab.0.bottom" timestamp="1607433040486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="404" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607433040486" />
+    <state width="1293" height="404" key="GridCell.Tab.0.center" timestamp="1607433040486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="404" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607433040486" />
+    <state width="1293" height="404" key="GridCell.Tab.0.left" timestamp="1607433040486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="404" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607433040486" />
+    <state width="1293" height="404" key="GridCell.Tab.0.right" timestamp="1607433040486">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="404" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607433040486" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1599785223999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -257,13 +286,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="566" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600686866437" />
-    <state x="624" y="75" width="1112" height="801" key="find.popup" timestamp="1607425463992">
+    <state x="624" y="75" width="1112" height="801" key="find.popup" timestamp="1607430035747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607425463992" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607425516529">
+    <state x="624" y="75" width="1112" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607430035747" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607432360044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607425516529" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607432360044" />
   </component>
 </project>

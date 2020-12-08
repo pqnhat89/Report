@@ -38,8 +38,15 @@
         @if ($reports ?? false)
             <tr>
                 <td colspan="18" style="text-align: center; font-weight: bold">
-                    {!! \App\Enums\Types::getTitle(request()->type) !!} {{ mb_strtoupper($reports[0]->month) }}
-                    NĂM {{ $reports[0]->year }}
+                    @php $inRange = request()->frommonth && request()->fromyear && request()->tomonth && request()->toyear @endphp
+                    @if ($inRange)
+                        {!! \App\Enums\Types::getTitle(request()->type) !!} TỪ {{ mb_strtoupper(request()->frommonth) }}
+                        NĂM {{ request()->fromyear }}
+                        ĐẾN {{ mb_strtoupper(request()->tomonth) }} NĂM {{ request()->toyear }}
+                    @else
+                        {!! \App\Enums\Types::getTitle(request()->type) !!} {{ mb_strtoupper($reports[0]->month) }}
+                        NĂM {{ $reports[0]->year }}
+                    @endif
                 </td>
             </tr>
             <tr>

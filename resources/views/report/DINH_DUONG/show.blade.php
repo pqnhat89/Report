@@ -2,10 +2,21 @@
 
 @section('content')
     <div class="container">
+        {{-- from -> to --}}
+        @component('component.fromto')
+        @endcomponent
+
         <div class="text-center pb-5">
             <?php $month = request()->month ?? (($report ?? false) ? $report->month : $reports[0]->month)  ?>
             <?php $year = request()->year ?? (($report ?? false) ? $report->year : $reports[0]->year)  ?>
-            <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
+            @php $inRange = request()->frommonth && request()->fromyear && request()->tomonth && request()->toyear @endphp
+            @if ($inRange)
+                <h1>{{ \App\Enums\Types::getTitle(request()->type) }} TỪ {{ mb_strtoupper(request()->frommonth) }}
+                    NĂM {{ request()->fromyear }} ĐẾN {{ mb_strtoupper(request()->tomonth) }}
+                    NĂM {{ request()->toyear }}</h1>
+            @else
+                <h1>{{ \App\Enums\Types::getTitle(request()->type) }} {{ mb_strtoupper($month) }} NĂM {{ $year }}</h1>
+            @endif
             @if ($report ?? false)
                 <div class="pt-3">
                     <strong>
@@ -24,6 +35,9 @@
         <div class="pt-3 pb-3 text-right">
             <form>
                 <input type="hidden" name="export" value="true">
+                @foreach(request()->all() as $k => $v)
+                    <input type="hidden" name="{{ $k }}" value="{{ $v }}">
+                @endforeach
                 <button class="btn btn-info" type="submit">Tải xuống</button>
             </form>
         </div>
