@@ -2,8 +2,9 @@
 
 namespace App\Exceptions;
 
-use App\Helpers\SessionHelper;
 use Exception;
+use App\Helpers\SessionHelper;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -49,6 +50,9 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof TokenMismatchException) {
+            Auth::guard()->logout();
+            $request->session()->flush();
+            $request->session()->regenerate();
             SessionHelper::resetCookie();
             return redirect('/login')->withErrors('Phiên đăng nhập của bạn đã hết. Vui lòng đăng nhập lại !');
         }
