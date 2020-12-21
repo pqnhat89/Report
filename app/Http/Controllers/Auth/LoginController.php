@@ -44,8 +44,12 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm()
+    public function showLoginForm(Request $request)
     {
+        $this->guard()->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+
         return view('auth.login', [
             'email' => Cookie::get($this->username()),
             'remember' => Cookie::get('remember')
